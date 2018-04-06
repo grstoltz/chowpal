@@ -3,8 +3,8 @@ const foodRoutes = require("./food");
 const itemRoutes = require("./item");
 const userRoutes = require("./user");
 
-router.use("/food", articleRoutes);
+router.use("/food", foodRoutes);
 router.use("/item", itemRoutes);
-router.user("/user". userRoutes);
+router.use("/user", userRoutes);
 
 module.exports = router;

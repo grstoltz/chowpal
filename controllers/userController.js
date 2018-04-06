@@ -2,27 +2,27 @@
 // var db = models.db
 // var Op = models.Op
 
-// Display list of all users.
-exports.user_list = function(req, res) {
-    res.send('NOT IMPLEMENTED: user list');
+// Display list of all items.
+exports.findAll = function(req, res) {
+    res.send('NOT IMPLEMENTED: item list');
 };
 
-// Display detail page for a specific user.
-exports.user_detail = function(req, res) {
-    res.send('NOT IMPLEMENTED: user detail: ' + req.params.id);
+// Display detail page for a specific item.
+exports.findOne = function(req, res) {
+    res.send('NOT IMPLEMENTED: item detail: ' + req.params.id);
 };
 
-// Handle user create on POST.
-exports.user_create = function(req, res) {
-    res.send('NOT IMPLEMENTED: user create POST');
+// Handle item create on POST.
+exports.createOne = function(req, res) {
+    res.send('NOT IMPLEMENTED: item create POST');
 };
 
-// Display user delete form on DELETE.
-exports.user_delete = function(req, res) {
-    res.send('NOT IMPLEMENTED: user delete on DELETE' + req.params.id);
+// Display item delete form on DELETE.
+exports.deleteOne = function(req, res) {
+    res.send('NOT IMPLEMENTED: item delete on DELETE' + req.params.id);
 };
 
-// Handle user update on Update.
-exports.user_update = function(req, res) {
-    res.send('NOT IMPLEMENTED: user update' + req.params.id);
+// Handle item update on Update.
+exports.findOneAndUpdate = function(req, res) {
+    res.send('NOT IMPLEMENTED: item update' + req.params.id);
 };

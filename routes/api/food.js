@@ -1,7 +1,7 @@
 const router = require("express").Router();
-const foodController = require('../controllers/foodController');
+const foodController = require('../../controllers/foodController');
 
-route.route("/")
+router.route("/")
     .get(foodController.findAll)
     .get(foodController.findOne)
     .post(foodController.createOne)

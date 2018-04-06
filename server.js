@@ -3,8 +3,11 @@ const path = require("path");
 const logger = require("morgan")
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const routes = require("./routes");
 const PORT = process.env.PORT || 3001;
 const app = express();
+
+app.use(routes);
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -16,7 +19,6 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-require("./routes/routes.js")(app)
 // Send every request to the React app
 // Define any API routes before this runs
 app.get("*", function(req, res) {

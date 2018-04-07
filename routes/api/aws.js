@@ -4,6 +4,9 @@ const awsController = require('../../controllers/awsController');
 const multer  = require('multer');
 const multerS3 = require('multer-s3');
 const AWS = require('aws-sdk');
+const models = require("./models");
+const db = models.db
+
 
 
 // Set your AWS credentials
@@ -30,3 +33,9 @@ router.route("/")
     .post(awsController.processOne)
 
 module.exports = router;
+
+db.sequelize.sync().then(function() {
+  app.listen(PORT, function() {
+    console.log("Sequelize listening on PORT " + PORT);
+  });
+});

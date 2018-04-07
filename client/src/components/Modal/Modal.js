@@ -22,7 +22,7 @@ class LModal extends React.Component {
             <div>
                 <Button color="primary" onClick={this.toggle}>{this.props.buttonLabel}</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-                    <ModalHeader toggle={this.toggle}>Multi Use Modal</ModalHeader>
+                    <ModalHeader toggle={this.toggle}>Example Modal</ModalHeader>
                     <ModalBody>
                        Alan is v handsome
                     </ModalBody>

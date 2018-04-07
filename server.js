@@ -7,6 +7,9 @@ const bodyParser = require('body-parser');
 const routes = require("./routes");
 const PORT = process.env.PORT || 3001;
 const app = express();
+var models = require("./models");
+var db = models.db
+
 
 
 
@@ -29,6 +32,8 @@ app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
-app.listen(PORT, function() {
-  console.log(`🌎 ==> Server now on port ${PORT}!`);
+db.sequelize.sync().then(function() {
+  app.listen(PORT, function() {
+    console.log("Sequelize listening on PORT " + PORT);
+  });
 });

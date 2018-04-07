@@ -3,7 +3,7 @@ module.exports = {
     "username": process.env.DEV_DB_USERNAME || "root",
     "password": "root",
     "port": process.env.DEV_DB_PORT || 3308,
-    "database": "pin_db",
+    "database": "chowpal_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

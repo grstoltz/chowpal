@@ -35,7 +35,6 @@ exports.processOne = function(req, res) {
     //sendRekcognition()
     
     const parseData = function(data){
-        console.log(data)
         const itemArr = data.TextDetections.map(element => {
            return element.DetectedText
         })

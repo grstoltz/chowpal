@@ -19,6 +19,7 @@ exports.createOne = function(req, res) {
     res.send('NOT IMPLEMENTED: item create POST');
 };
 
+//Takes in a parsed product name and creates it if it isn't in the database - currently will only return if an item has been created or not
 exports.findOrCreate = function(req, res) {
     console.log(req.body)
     db.Items.findOrCreate({where: {

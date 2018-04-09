@@ -91,26 +91,31 @@ exports.processUPC = function(req, res){
     
     //sendRekcognition()
     
+    //Parses data from returned JSON from receipt image
     const parseData = function(data){
         const itemArr = data.TextDetections.map(element => {
            return element.DetectedText
         })
         console.log(itemArr[2])
 
+        //item is currently hardcoded for testing purposes
         const params = {
             product_name: "New Item",
             store: "target",
-            UPC: "UPCSTRING",
+            UPC: null,
             product_id: "idstring"
         }
 
+        //Request options
         const options = {
             method: 'post',
             body: params,
             json: true,
             url: "http://localhost:3000/api/item/"
           }
-
+        
+        //Takes the product name and queries the database, if the product name does not exist in the database a new item is created
+        //See item controller for querying properties
         request(options, (err, httpResponse, body) => { 
             if (err) {
                 console.log(err)

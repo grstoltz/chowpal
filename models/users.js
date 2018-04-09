@@ -22,6 +22,7 @@ module.exports = function(sequelize, DataTypes) {
   }, {
       timestamps: false
   });
+  
   // User.associate = function(models) {
   //   // Associating User with Pins
   //   // When an User is deleted, also delete any associated Boards

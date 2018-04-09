@@ -19,23 +19,25 @@ exports.createOne = function(req, res) {
 };
 
 exports.findOrCreate = function(req, res) {
-    console.log(req.body.product_name)
-    // db.Items.findOrCreate({where: {
-    //     product_name: req.body.product_name
-    //         }, 
-    //     defaults: {
-    //         product_name: req.body.product_name,
-    //         store: req.body.store,
-    //         UPC: req.body.UPC,
-    //         product_id: req.body.product_id
-    //         }
-    //     }).spread((item, created) => {
-    //         console.log(item.get({
-    //             plain: true
-    //         }))
-    //         console.log(created)
-    //   });
-    res.send(req.body.product_name)
+    console.log(req.body)
+    db.Items.findOrCreate({where: {
+        product_name: req.body.product_name
+            }, 
+        defaults: {
+            product_name: req.body.product_name,
+            store: req.body.store,
+            UPC: req.body.UPC,
+            product_id: req.body.product_id,
+            //user_id: req.body.userid
+            }
+        }).then(
+            (result) => {
+              const [instance, wasCreated] = result;
+              (wasCreated ? 
+                res.send("Item Created") : res.send("Item already in database")
+                )
+            }
+          );
 };
 
 // Display item delete form on DELETE.
@@ -45,5 +47,11 @@ exports.deleteOne = function(req, res) {
 
 // Handle item update on Update.
 exports.findOneAndUpdate = function(req, res) {
-    res.send('NOT IMPLEMENTED: item update' + req.params.id);
+    //res.send('NOT IMPLEMENTED: item update' + req.params.id);
+    db.Items.update({
+        UPC: req.body.UPC
+    },{
+        where: {id: req.body.id}
+    }).then(result => res.send(result))
+
 };

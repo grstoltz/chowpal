@@ -1,28 +1,38 @@
-var models = require("../models");
-var db = models.db
-var Op = models.Op
+const ZebraCrossing = require('zebra-crossing');
+const fs = require("fs")
+const path = require("path");
+const request = require("request")
 
-exports.findAll = function(req, res) {
-    res.send('NOT IMPLEMENTED: item list');
-    db.Items.findAll({UPC: null}).then(result => console.log(result))
+// Gets UPC from an image
+exports.getUPC = function(req, res) {
+    ZebraCrossing.read(fs.readFileSync(path.join(__dirname, '../testupc.gif')), { pureBarcode: true })
+    .then(data => {
+        const upcString = data.parsed.toString('utf-8')
+        console.log(upcString)
+
+        const params = {
+            UPC: upcString,
+            id: req.body.id
+        }
+
+        const options = {
+            method: 'put',
+            body: params,
+            json: true,
+            url: "http://localhost:3000/api/item/"
+          }
+
+        request(options, (err, httpResponse, body) => { 
+            if (err) {
+                console.log(err)
+                return res.json({ success: false, msg: 'cannot update item route' });
+            }
+            res.json(httpResponse);
+        })
+    });
 };
 
-// Display detail page for a specific item.
-exports.findOne = function(req, res) {
-    res.send('NOT IMPLEMENTED: item detail: ' + req.params.id);
-};
+exports.getUPCData = function(req, res){
 
-// Handle item create on POST.
-exports.createOne = function(req, res) {
-    res.send('NOT IMPLEMENTED: item create POST');
-};
-
-// Display item delete form on DELETE.
-exports.deleteOne = function(req, res) {
-    res.send('NOT IMPLEMENTED: item delete on DELETE' + req.params.id);
-};
-
-// Handle item update on Update.
-exports.findOneAndUpdate = function(req, res) {
-    res.send('NOT IMPLEMENTED: item update' + req.params.id);
-};
+    
+}

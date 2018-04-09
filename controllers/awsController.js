@@ -104,7 +104,7 @@ exports.processUPC = function(req, res){
             product_id: "idstring"
         }
 
-        var options = {
+        const options = {
             method: 'post',
             body: params,
             json: true,

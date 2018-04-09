@@ -2,9 +2,9 @@ const router = require("express").Router();
 const upcController = require('../../controllers/upcController');
 
 router.route("/")
-    .get(upcController.findAll)
-    .post(upcController.createOne)
-    .put(upcController.findOneAndUpdate)
-    .delete(upcController.deleteOne);
+    .post(upcController.getUPC)
+
+router.route("/data")
+    .post(upcController.getUPCData)
 
 module.exports = router;

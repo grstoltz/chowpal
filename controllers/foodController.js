@@ -1,6 +1,5 @@
 var models = require("../models");
 var db = models.db
-var Op = models.Op
 
 // Display list of all foods.
 exports.findAll = function(req, res) {

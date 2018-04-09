@@ -1,4 +1,5 @@
 var models = require("../models");
+const request = require("request")
 var db = models.db
 var Op = models.Op
 
@@ -26,7 +27,7 @@ exports.findOrCreate = function(req, res) {
         defaults: {
             product_name: req.body.product_name,
             store: req.body.store,
-            UPC: req.body.UPC,
+            UPC: null,
             product_id: req.body.product_id,
             //user_id: req.body.userid
             }
@@ -52,6 +53,8 @@ exports.findOneAndUpdate = function(req, res) {
         UPC: req.body.UPC
     },{
         where: {id: req.body.id}
-    }).then(result => res.send(result))
+    }).then(
+        result => console.log(result)
+    )
 
 };

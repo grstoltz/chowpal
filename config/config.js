@@ -11,7 +11,7 @@ module.exports = {
     "username": "root",
     "password": "root",
     "port": 3308,
-    "database": "database_test",
+    "database": "chowpal_db_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var Users = sequelize.define("Usesr", {
+  var User = sequelize.define("User", {
     id:  {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -29,5 +29,5 @@ module.exports = function(sequelize, DataTypes) {
   //     onDelete: "cascade"
   //   });
   // };
-  return Users;
+  return User;
 };

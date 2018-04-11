@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
     UPC: DataTypes.STRING,
     store: DataTypes.STRING,
     product_name: DataTypes.STRING,
-    product_id: DataTypes.STRING
+    product_id: DataTypes.STRING,
 }, {
     timestamps: false
 });

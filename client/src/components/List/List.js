@@ -1,12 +1,13 @@
 import React from 'react';
 import { ListGroup, ListGroupItem } from 'reactstrap';
+import './List.css'
 
-export default class Example extends React.Component {
+export default class List extends React.Component {
     render() {
         return (
             <div>
-                <h3>List with anchors to item </h3>
-                <p> Example description of the list here</p>
+                <h3 className='centered navMargin'>My Pantry</h3>
+                <p className='centered'>Heres the stuff u gotz:</p>
                 <ListGroup>
                     <ListGroupItem tag="a" href="#" action>Cras justo odio</ListGroupItem>
                     <ListGroupItem tag="a" href="#" action>Dapibus ac facilisis in</ListGroupItem>

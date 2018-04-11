@@ -19,4 +19,3 @@ storiesOf('ChowCard', module).add('Basic Card', () => <ChowCard />);
 
 
 
-

@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var User_Foods = sequelize.define("User_Foods", {
+  var User_Food = sequelize.define("User_Food", {
     id:  {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -23,5 +23,5 @@ module.exports = function(sequelize, DataTypes) {
       timestamps: false
   });
 
-  return User_Foods;
+  return User_Food;
 };

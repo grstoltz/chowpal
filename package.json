@@ -9,7 +9,7 @@
     "start": "concurrently \"./node_modules/.bin/nodemon\" \"npm run client\"",
     "build": "cd client && npm run build",
     "deploy": "yarn build && git add . && git commit -m \"Building for production\" && git push heroku master",
-    "test:server": "mocha",
+    "test:server": "env NODE_ENV=test mocha --exit",
     "test": "yarn lint; yarn test:server; CI=true yarn test:client",
     "test:client": "cd client; yarn test",
     "lint": "eslint ."
@@ -17,6 +17,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.0.5",
+    "mocha-prepare": "^0.1.0",
     "babel-eslint": "^8.2.2",
     "concurrently": "^3.5.0",
     "eslint": "^4.19.1",
@@ -37,6 +40,7 @@
     "multer": "^1.3.0",
     "multer-s3": "^2.7.0",
     "mysql2": "^1.5.3",
+    "request": "^2.85.0",
     "sequelize": "^4.37.6",
     "zebra-crossing": "^0.1.1"
   },

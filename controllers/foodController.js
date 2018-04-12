@@ -3,12 +3,20 @@ var db = models.db
 
 // Display list of all foods.
 exports.findAll = function(req, res) {
-    res.send('NOT IMPLEMENTED: food list');
+    db.Food.findAll().then(function(result){
+        res.send(result);
+        })
 };
 
 // Display detail page for a specific food.
 exports.findOne = function(req, res) {
-    res.send('NOT IMPLEMENTED: food detail: ' + req.params.id);
+    db.Food.findOne({
+        where: {
+            id: req.params.id
+        }
+        }).then(function(result) {
+        res.send(result);
+    });
 };
 
 // Handle food create on POST.
@@ -31,10 +39,24 @@ exports.createOne = function(req, res) {
 
 // Display food delete form on DELETE.
 exports.deleteOne = function(req, res) {
-    res.send('NOT IMPLEMENTED: food delete on DELETE' + req.params.id);
+    db.Food.destroy({
+        where: {
+            id: req.params.id
+        }
+        }).then(function(result) {
+        res.send(result);
+    });
 };
 
 // Handle food update on Update.
 exports.findOneAndUpdate = function(req, res) {
-    res.send('NOT IMPLEMENTED: food update' + req.params.id);
+    db.Food.update(
+        req.body,
+        {
+            where: {
+            id: req.body.id
+            }
+        }).then(function(results) {
+            res.send(results);
+        });
 };

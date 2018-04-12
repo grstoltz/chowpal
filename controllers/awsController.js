@@ -1,6 +1,6 @@
 const AWS = require('aws-sdk');
 const data = require('./awsRes.json');
-const axios = require('axios');
+// const axios = require('axios');
 const request = require('request');
 
 // Set your AWS credentials

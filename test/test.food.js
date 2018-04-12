@@ -25,7 +25,8 @@ before(function(done) {
   // Insert a user
   it('should load user', function (done) {
     var userObj = {
-      user_id: '108480614932320425425'
+      user_id: '108480614932320425425',
+      user_name: 'tmederos'
     };
     User
     .create( userObj )
@@ -38,6 +39,7 @@ before(function(done) {
     .then((foundUser) => {
       expect(foundUser).to.not.be.null
       console.log( 'Query New User: ', foundUser.user_id);
+      console.log( 'Query New Name - ', foundUser.user_name );
       done();
     })
   });

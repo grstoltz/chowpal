@@ -1,9 +1,5 @@
 var models = require("../models");
 var db = models.db
-<<<<<<< HEAD
-var Op = models.Op
-=======
->>>>>>> 1515ba46a970f13bde58ce0667f7fb9dd7c7c0a6
 
 // Display list of all foods.
 exports.findAll = function(req, res) {
@@ -25,11 +21,6 @@ exports.findOne = function(req, res) {
 
 // Handle food create on POST.
 exports.createOne = function(req, res) {
-<<<<<<< HEAD
-    db.Food.create(req.body).then(function(result) {
-        res.send(result);
-    });
-=======
     db.Foods.findOrCreate({where: {
         UPC: req.body.UPC
             }, 
@@ -44,7 +35,6 @@ exports.createOne = function(req, res) {
                 res.send(item.get({plain: false}))
             )
       })
->>>>>>> 1515ba46a970f13bde58ce0667f7fb9dd7c7c0a6
 };
 
 // Display food delete form on DELETE.

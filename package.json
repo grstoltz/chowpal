@@ -9,7 +9,7 @@
     "start": "concurrently \"./node_modules/.bin/nodemon\" \"npm run client\"",
     "build": "cd client && npm run build",
     "deploy": "yarn build && git add . && git commit -m \"Building for production\" && git push heroku master",
-    "test": "env NODE_ENV=test mocha --exit"
+    "test:server": "env NODE_ENV=test mocha --exit"
   },
   "author": "",
   "license": "ISC",
@@ -18,7 +18,6 @@
     "concurrently": "^3.5.0",
     "mocha": "^5.0.5",
     "mocha-prepare": "^0.1.0",
-    "mysql2": "^1.5.3",
     "nodemon": "^1.11.0"
   },
   "dependencies": {
@@ -32,6 +31,7 @@
     "multer": "^1.3.0",
     "multer-s3": "^2.7.0",
     "mysql2": "^1.5.3",
+    "request": "^2.85.0",
     "sequelize": "^4.37.6",
     "zebra-crossing": "^0.1.1"
   },

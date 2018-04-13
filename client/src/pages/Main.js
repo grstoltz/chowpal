@@ -3,8 +3,8 @@ import React from "react";
 import Container from "../components/Grid/Container";
 // import Row from "../components/Grid/Row";
 // import Col from "../components/Grid/Col";
-import List from "../components/List/List";
-import SelectButton from "../components/SelectButton/SelectButton";
+import List from "../components/List";
+import SelectButton from "../components/SelectButton";
 
 const Main = () => (
     <div>

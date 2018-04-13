@@ -1,39 +1,45 @@
 import React from 'react';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import { Navbar, NavbarBrand, NavbarNav, NavbarToggler, Collapse, NavItem, NavLink, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'mdbreact';
 
 export default class ChowNav extends React.Component {
   constructor(props) {
     super(props);
-
-    this.toggleNavbar = this.toggleNavbar.bind(this);
     this.state = {
-      collapsed: true
+      collapse: false,
+      isWideEnough: false,
+      dropdownOpen: false
     };
+    this.onClick = this.onClick.bind(this);
+    this.toggle = this.toggle.bind(this);
   }
 
-  toggleNavbar() {
+  onClick() {
     this.setState({
-      collapsed: !this.state.collapsed
+      collapse: !this.state.collapse,
+    });
+  }
+
+  toggle() {
+    this.setState({
+      dropdownOpen: !this.state.dropdownOpen
     });
   }
   render() {
     return (
-      <div>
-        <Navbar color="faded" light>
+        {/* <Navbar color="faded" light>
           <NavbarBrand href="/" className="mr-auto">Chow Pal</NavbarBrand>
           <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
           <Collapse isOpen={!this.state.collapsed} navbar>
-            <Nav navbar>
+            <NavbarNav>
               <NavItem>
-                <NavLink href="/components/">Components</NavLink>
+                <NavLink to="/components/">Components</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+                <NavLink to="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
               </NavItem>
-            </Nav>
+            </NavbarNav>
           </Collapse>
-        </Navbar>
-      </div>
+        </Navbar> */}
     );
   }
 }

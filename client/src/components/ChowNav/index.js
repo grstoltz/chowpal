@@ -1,1 +1,1 @@
-export { default } from "./ChowNav";
+export { default } from "./MaterialNav";

@@ -21,7 +21,7 @@ exports.findOne = function(req, res) {
 
 // Handle food create on POST.
 exports.createOne = function(req, res) {
-    db.Foods.findOrCreate({where: {
+    db.Food.findOrCreate({where: {
         UPC: req.body.UPC
             }, 
         defaults: {

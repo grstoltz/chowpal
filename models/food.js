@@ -23,5 +23,13 @@ module.exports = function(sequelize, DataTypes) {
 }, {
     timestamps: false
 });
+
+  Food.associate = (models) => {
+    Food.belongsToMany(models.User, {
+      through: "user-food",
+      foreignKey: "food_id",
+      onDelete: "cascade"
+    })
+  }
   return Food;
 };

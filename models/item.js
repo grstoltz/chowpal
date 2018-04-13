@@ -9,6 +9,7 @@ module.exports = function(sequelize, DataTypes) {
     store: DataTypes.STRING,
     product_name: DataTypes.STRING,
     product_id: DataTypes.STRING,
+    uploaded_by: DataTypes.STRING
 }, {
     timestamps: false
 });

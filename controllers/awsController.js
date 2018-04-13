@@ -72,7 +72,6 @@ exports.processItem = function(req, res) {
 exports.processUPC = function(req, res){
 
     const sendRekcognition = function(){
-      
         const params = {
             Image: { 
                S3Object: { 

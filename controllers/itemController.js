@@ -22,7 +22,7 @@ exports.createOne = function(req, res) {
 //Takes in a parsed product name and creates it if it isn't in the database - currently will only return if an item has been created or not
 exports.findOrCreate = function(req, res) {
     console.log(req.body)
-    db.Items.findOrCreate({where: {
+    db.Item.findOrCreate({where: {
         product_name: req.body.product_name
             }, 
         defaults: {
@@ -50,7 +50,7 @@ exports.deleteOne = function(req, res) {
 // Handle item update on Update.
 exports.findOneAndUpdate = function(req, res) {
     //res.send('NOT IMPLEMENTED: item update' + req.params.id);
-    db.Items.update({
+    db.Item.update({
         UPC: req.body.UPC
     },{
         where: {id: req.body.id}

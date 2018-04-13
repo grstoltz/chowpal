@@ -9,9 +9,13 @@ module.exports = function(sequelize, DataTypes) {
     store: DataTypes.STRING,
     product_name: DataTypes.STRING,
     product_id: DataTypes.STRING,
-    uploaded_by: DataTypes.STRING
 }, {
     timestamps: false
 });
+  Item.associate = (models) => {
+  Item.belongsTo(models.User, {
+    foreignKey: "uploadedBy"
+  })
+}
   return Item;
 };

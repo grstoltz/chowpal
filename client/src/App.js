@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Main from "./pages/Main";
 import Item from "./pages/Item";
-import ChowNav from "./components/ChowNav/ChowNav";
+import ChowNav from "./components/ChowNav";
 import Footer from "./components/Footer/Footer";
 import Wrapper from "./components/Wrapper/Wrapper";
+
 
 class App extends Component {
   render() {
@@ -18,7 +19,7 @@ class App extends Component {
             <Route exact path="/items" component={Item} />
           </Wrapper>
           <Footer />
-        </div>
+          </div>
       </Router>
     );
   }

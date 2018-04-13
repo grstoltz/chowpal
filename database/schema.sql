@@ -14,7 +14,7 @@ CREATE TABLE food (
   id int(11) AUTO_INCREMENT NOT NULL,
   name varchar(255) NOT NULL,
   UPC varchar(255),
-  category varchar(255),
+  brand varchar(255),
   PRIMARY KEY (id)
 );
 

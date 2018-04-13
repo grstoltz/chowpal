@@ -10,6 +10,7 @@ module.exports = function (sequelize, DataTypes) {
     directions: DataTypes.STRING,
   }, {
     timestamps: false,
+    freezeTableName: true,
   });
   return Recipe;
 };

@@ -2,37 +2,37 @@ INSERT INTO  user (user_id, user_name ) VALUES ( '108480614932320425425', 'tmede
 INSERT INTO  user (user_id, user_name ) VALUES ( '108480614932320425566', 'gstoltz');
 
 
-INSERT INTO food (name, UPC, category )
+INSERT INTO food (name, UPC, brand )
   VALUES ('Idaho Spuds instant Mashed Potatoes', '018000425006', 'pantry' );
 
-INSERT INTO food (name, UPC, category )
+INSERT INTO food (name, UPC, brand )
   VALUES ("Lay's Kettle Cooked 40% Less Fat Salt & Vinegar Flavored Potato Chips", '028400251136', 'pantry' );
 
-INSERT INTO food (name, UPC, category )
+INSERT INTO food (name, UPC, brand )
   VALUES ('Rold Gold Pretzel Sticks', '028400047708', 'pantry' );
 
-INSERT INTO food (name, UPC, category )
+INSERT INTO food (name, UPC, brand )
   VALUES ('Baked Lays', '002840018382', 'pantry' );
 
-INSERT INTO food (name, UPC, category )
+INSERT INTO food (name, UPC, brand )
   VALUES ("Campbell's Healthy Request Condensed Soup, Cream of Mushroom", '005100006007', 'pantry' );
 
-INSERT INTO food (name, UPC, category )
+INSERT INTO food (name, UPC, brand )
   VALUES ('Diet Mountain Dew Cans', '001200000170', 'pantry' );
 
-INSERT INTO food (name, UPC, category )
+INSERT INTO food (name, UPC, brand )
   VALUES ('Lean Cuisine Four Cheese Pizza', '013800272355', 'Pizza' );
 
-INSERT INTO food (name, UPC, category )
+INSERT INTO food (name, UPC, brand )
   VALUES ('Lean Cuisine Pepperoni Pizza,', '013800537515', 'Pizza' );
 
-INSERT INTO food (name, UPC, category )
+INSERT INTO food (name, UPC, brand )
   VALUES ('Arnold Whole Grains 100% Whole Wheat Sliced Bread', '013800272355', 'Pizza' );
 
-INSERT INTO food (name, UPC, category )
+INSERT INTO food (name, UPC, brand )
   VALUES ('Jennie O Turkey Bacon', '013800537515', 'Pizza' );
 
-INSERT INTO food (name, UPC, category )
+INSERT INTO food (name, UPC, brand )
   VALUES ('Rold Gold Pretzel Sticks', '028400047708', 'Pizza' );
 
 

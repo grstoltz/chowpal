@@ -17,7 +17,8 @@ module.exports = function (sequelize, DataTypes) {
     product_name: DataTypes.STRING,
     product_id: DataTypes.STRING,
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
   Item.associate = (models) => {
   Item.belongsTo(models.User, {

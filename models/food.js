@@ -21,7 +21,8 @@ module.exports = function (sequelize, DataTypes) {
     },
     category: DataTypes.STRING
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
   Food.associate = (models) => {

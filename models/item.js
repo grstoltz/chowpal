@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var Items = sequelize.define( "Items", {
+  var Item = sequelize.define( "Item", {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -12,5 +12,5 @@ module.exports = function(sequelize, DataTypes) {
 }, {
     timestamps: false
 });
-  return Items;
+  return Item;
 };

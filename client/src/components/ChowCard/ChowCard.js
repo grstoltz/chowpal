@@ -1,22 +1,16 @@
 
 import React from 'react';
 import { Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
-
+import "./ChowCard.css";
 const ChowCard = (props) => {
     return (
         <Row>
-            <Col sm="6">
+            <Col sm="12">
                 <Card body>
-                    <CardTitle>This is what my title is now</CardTitle>
-                    <CardText>this is the best text</CardText>
-                    <Button>to OZ!</Button>
-                </Card>
-            </Col>
-            <Col sm="6">
-                <Card body>
-                    <CardTitle>This is what my title is now</CardTitle>
-                    <CardText>this is the best text</CardText>
-                    <Button>back to kansas</Button>
+                    <CardTitle className="centerTitle">{props.cardTitle}</CardTitle>
+                    <img src="http://via.placeholder.com/300x300" alt="placeholder"></img>
+                    <CardText className="centerText">{props.cardText}</CardText>
+                    <Button tag="a" href="#">{props.buttonText}</Button>
                 </Card>
             </Col>
         </Row>

@@ -1,15 +1,15 @@
-module.exports = function(sequelize, DataTypes) {
-  var Recipe = sequelize.define( "Recipe", {
+module.exports = function (sequelize, DataTypes) {
+  const Recipe = sequelize.define('Recipe', {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true,
     },
     name: DataTypes.STRING,
     ingredients: DataTypes.STRING,
-    directions: DataTypes.STRING
-}, {
-    timestamps: false
-});
+    directions: DataTypes.STRING,
+  }, {
+    timestamps: false,
+  });
   return Recipe;
 };

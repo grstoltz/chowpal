@@ -1,28 +1,27 @@
-module.exports = function(sequelize, DataTypes) {
-  var User = sequelize.define("User", {
-    id:  {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true
+module.exports = function (sequelize, DataTypes) {
+  const User = sequelize.define('User', {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
     },
     user_id: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    validate: {
-      len: [1]
-      }
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [ 1 ],
+      },
     },
     user_name: {
-    type: DataTypes.STRING,
-    allowNull: true,
-    validate: {
-      len: [1]
-      }
+      type: DataTypes.STRING,
+      allowNull: true,
+      validate: {
+        len: [ 1 ],
+      },
     },
   }, {
-      timestamps: false
+    timestamps: false,
   });
-
   User.associate = (models) => {
     User.hasMany(models.Food, {
       through: "user-food",
@@ -32,3 +31,4 @@ module.exports = function(sequelize, DataTypes) {
   }
   return User;
 };
+

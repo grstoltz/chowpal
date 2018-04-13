@@ -1,9 +1,16 @@
-module.exports = function(sequelize, DataTypes) {
-  var Item = sequelize.define( "Item", {
+module.exports = function (sequelize, DataTypes) {
+  const Item = sequelize.define('Item', {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        len: [ 1 ],
+      },
     },
     UPC: DataTypes.STRING,
     store: DataTypes.STRING,

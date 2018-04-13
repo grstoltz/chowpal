@@ -8,7 +8,7 @@ router.use("/api", apiRoutes);
 router.get('/api/test', (req, res) => {
   console.log('Hello')
   res.json({
-    message: 'farts'
+    message: 'Router testing',
   })
 })
 

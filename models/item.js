@@ -5,6 +5,13 @@ module.exports = function (sequelize, DataTypes) {
       primaryKey: true,
       autoIncrement: true,
     },
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        len: [ 1 ],
+      },
+    },
     UPC: DataTypes.STRING,
     store: DataTypes.STRING,
     product_name: DataTypes.STRING,

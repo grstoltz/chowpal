@@ -9,7 +9,7 @@ import SelectButton from "../components/SelectButton/SelectButton";
 const Main = () => (
     <div>
         <Container>
-            <List title="My Pantry" description="Lots of Lorem so far broh"></List>
+            <List title="My Pantry" description="So far only placeholder text"></List>
             <SelectButton></SelectButton>
         </Container>
     </div>

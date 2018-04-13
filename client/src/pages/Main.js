@@ -3,14 +3,15 @@ import React from "react";
 import Container from "../components/Grid/Container";
 // import Row from "../components/Grid/Row";
 // import Col from "../components/Grid/Col";
-import List from "../components/List";
-import SelectButton from "../components/SelectButton";
+import MaterialList from "../components/List";
+import MaterialButton from "../components/SelectButton";
 
 const Main = () => (
     <div>
         <Container>
-            <List title="My Pantry" description="So far only placeholder text"></List>
-            <SelectButton></SelectButton>
+            <h1>My Pantry</h1>
+            <MaterialList ></MaterialList>
+            <MaterialButton></MaterialButton>
         </Container>
     </div>
 )

@@ -1,1 +1,1 @@
-export { default } from "./ChowCard";
+export { default } from "./MaterialCard";

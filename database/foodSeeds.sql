@@ -8,7 +8,9 @@ CREATE TABLE food (
   PRIMARY KEY (id)
 );
 
-LOAD DATA LOCAL INFILE '/Users/trish/Grocery.csv'
+INFILE '/Users/trish/Grocery.csv'
+
+LOAD DATA LOCAL INFILE '/Chowpal/database/Grocery.csv'
 INTO TABLE chowpal_db.food
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'

@@ -5,11 +5,12 @@ import Container from "../components/Grid/Container";
 // import Col from "../components/Grid/Col";
 import MaterialList from "../components/List";
 import MaterialButton from "../components/SelectButton";
+import './Main.css';
 
 const Main = () => (
     <div>
         <Container>
-            <h1>My Pantry</h1>
+            <h1 className="pantryHead">My Pantry</h1>
             <MaterialList ></MaterialList>
             <MaterialButton></MaterialButton>
         </Container>

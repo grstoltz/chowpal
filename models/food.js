@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
         len: [ 1 ],
       },
     },
-    category: DataTypes.STRING,
+    brand: DataTypes.STRING,
   }, {
     timestamps: false,
     freezeTableName: true,

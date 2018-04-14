@@ -22,9 +22,9 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     timestamps: false,
   });
-  User.associate = (models) => 
+  User.associate = (models) => {
     User.belongsToMany(models.Food, {
-      through: 'user-food',
+      through: 'user_food',
       foreignKey: 'user_id',
       onDelete: 'cascade',
     });

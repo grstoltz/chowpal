@@ -5,7 +5,7 @@ export default class SelectButton extends React.Component {
     render() {
         return (
             <div>
-                <Button color="primary">primary</Button>{' '}
+                <Button href={this.props.link} color="primary">{this.props.text}</Button>{' '}
             </div>
         );
     }

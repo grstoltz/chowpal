@@ -1,23 +1,16 @@
 const models = require('../models');
-const passport = require('passport');
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
-
 
 const db = models.db;
-// var Op = models.Op
 
-
-exports.login = function (req, res) {
-  passport.use(new GoogleStrategy(
-    {
-      clientID: process.envGOOGLE_CLIENT_ID,
-      clientSecret: process.envGOOGLE_CLIENT_SECRET,
-      callbackURL: 'http://localhost:3000/auth/google/callback',
+exports.callback = function (req, res) {
+  db.User.findOrCreate({
+    where: {
+      user_id: req.user.id,
     },
-    ((accessToken, refreshToken, profile, cb) => {
-      db.User.findOrCreate({ googleId: profile.id }, (err, user) => cb(err, user));
-    }),
-  ));
+  }).then((result) => {
+    console.log(result);
+    res.redirect('/');
+  });
 };
 
 // Display list of all items.

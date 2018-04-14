@@ -7,10 +7,14 @@ import MaterialList from "../components/List";
 import MaterialButton from "../components/SelectButton/MaterialButton";
 import './Main.css';
 
+import {get} from 'axios';
+
 const Main = () => (
     <div>
         <Container>
+
             <h1 className="pantryHead">My Pantry</h1>
+            <MaterialButton link="/auth/google" text="Login" />
             <MaterialList ></MaterialList>
             <MaterialButton buttonText='Take me somewhere' iconClass='fa fa-camera-retro ml-2 fa-lg' buttonColor='white'></MaterialButton>
         </Container>

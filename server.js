@@ -1,14 +1,16 @@
-const dotenv = require('dotenv').config()
-const express = require("express");
-const path = require("path");
-const logger = require("morgan")
+const dotenv = require('dotenv').config();
+const express = require('express');
+const path = require('path');
+const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const routes = require("./routes");
+const routes = require('./routes');
+const models = require('./models');
+
 const PORT = process.env.PORT || 3001;
 const app = express();
-var models = require("./models");
-var db = models.db
+
+const db = models.db;
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -18,12 +20,12 @@ app.use(cookieParser());
 app.use(routes);
 
 // Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-} 
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+}
 
-db.sequelize.sync().then(function() {
-  app.listen(PORT, function() {
-    console.log("Sequelize listening on PORT " + PORT);
+db.sequelize.sync().then(function () {
+  app.listen(PORT, function () {
+    console.log('Sequelize listening on PORT ', PORT);
   });
 });

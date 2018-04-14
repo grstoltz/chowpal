@@ -3,6 +3,11 @@ import React from 'react';
 import { Navbar, NavbarBrand, NavbarNav, NavItem, NavLink } from 'mdbreact';
 import { BrowserRouter as Router } from 'react-router-dom';
 import MaterialButton from '../SelectButton/MaterialButton.js';
+<<<<<<< HEAD
+=======
+import './ChowNav.css';
+
+>>>>>>> 5ee4fea613baf76e1d914461a5123b8b9a4772ab
 export default class MaterialNav extends React.Component {
     render() {
         return (
@@ -19,11 +24,11 @@ export default class MaterialNav extends React.Component {
                               <NavLink to="#">Pending Items</NavLink>
                           </NavItem>
                           <NavItem>
-                              <MaterialButton buttonColor='white' buttonText='Login'>
+                              <MaterialButton buttonColor='white' iconClass='fa fa-cutlery ml-2' buttonText='Login'>
                               </MaterialButton>
                           </NavItem>
                           <NavItem>
-                              <MaterialButton buttonColor='white' buttonText='Sign Up' >
+                              <MaterialButton buttonColor='white' iconClass='fa fa-cutlery ml-2' buttonText='Sign Up'>
                               </MaterialButton>
                           </NavItem>
                         </NavbarNav>

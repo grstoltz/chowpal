@@ -10,6 +10,7 @@ const passport = require('passport');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
+
 const db = models.db;
 
 app.use(logger('dev'));

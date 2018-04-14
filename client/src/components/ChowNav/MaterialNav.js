@@ -1,64 +1,32 @@
 
-import React, { Component } from 'react';
-import { Navbar, NavbarBrand, NavbarNav, NavbarToggler, Collapse, NavItem, NavLink, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'mdbreact';
+import React from 'react';
+import { Navbar, NavbarBrand, NavbarNav, NavItem, NavLink } from 'mdbreact';
 import { BrowserRouter as Router } from 'react-router-dom';
-
+import MaterialButton from '../SelectButton/MaterialButton.js';
 export default class MaterialNav extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            collapse: false,
-            isWideEnough: false,
-            dropdownOpen: false
-        };
-    this.onClick = this.onClick.bind(this);
-    this.toggle = this.toggle.bind(this);
-    }
-
-    onClick(){
-        this.setState({
-            collapse: !this.state.collapse,
-        });
-    }
-
-    toggle() {
-        this.setState({
-            dropdownOpen: !this.state.dropdownOpen
-        });
-    }
-
     render() {
         return (
             <Router>
-                <Navbar color="indigo" dark expand="md" scrolling>
+                <Navbar color="green darken-4" dark expand="md" scrolling>
                     <NavbarBrand href="/">
-                        <strong>Navbar</strong>
+                         <img src="./logo.png" height="50"/>
                     </NavbarBrand>
-                    { !this.state.isWideEnough && <NavbarToggler onClick = { this.onClick } />}
-                    <Collapse isOpen = { this.state.collapse } navbar>
                         <NavbarNav left>
-                          <NavItem active>
-                              <NavLink to="#">Home</NavLink>
+                          <NavItem>
+                              <NavLink to="#">My Pantry</NavLink>
                           </NavItem>
                           <NavItem>
-                              <NavLink to="#">Features</NavLink>
+                              <NavLink to="#">Pending Items</NavLink>
                           </NavItem>
                           <NavItem>
-                              <NavLink to="#">Pricing</NavLink>
+                              <MaterialButton buttonColor='white' buttonText='Login'>
+                              </MaterialButton>
                           </NavItem>
                           <NavItem>
-                              <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-                              <DropdownToggle nav caret>Dropdown</DropdownToggle>
-                              <DropdownMenu>
-                                  <DropdownItem href="#">Action</DropdownItem>
-                                  <DropdownItem href="#">Another Action</DropdownItem>
-                                  <DropdownItem href="#">Something else here</DropdownItem>
-                                  <DropdownItem href="#">Something else here</DropdownItem>
-                              </DropdownMenu>
-                              </Dropdown>
+                              <MaterialButton buttonColor='white' buttonText='Sign Up' >
+                              </MaterialButton>
                           </NavItem>
                         </NavbarNav>
-                    </Collapse>
                 </Navbar>
             </Router>
         );

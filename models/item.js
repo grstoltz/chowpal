@@ -1,4 +1,4 @@
-module.exports = function (sequelize, DataTypes) {
+module.exports = (sequelize, DataTypes) => {
   const Item = sequelize.define('Item', {
     id: {
       type: DataTypes.INTEGER,
@@ -16,14 +16,14 @@ module.exports = function (sequelize, DataTypes) {
     store: DataTypes.STRING,
     product_name: DataTypes.STRING,
     product_id: DataTypes.STRING,
-}, {
+  }, {
     timestamps: false,
     freezeTableName: true,
-});
+  });
   Item.associate = (models) => {
-  Item.belongsTo(models.User, {
-    foreignKey: "uploadedBy"
-  })
-}
+    Item.belongsTo(models.User, {
+      foreignKey: 'user_id',
+    });
+  };
   return Item;
 };

@@ -1,4 +1,4 @@
-module.exports = function (sequelize, DataTypes) {
+module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
     id: {
       type: DataTypes.INTEGER,
@@ -24,11 +24,11 @@ module.exports = function (sequelize, DataTypes) {
   });
   User.associate = (models) => {
     User.hasMany(models.Food, {
-      through: "user-food",
-      foreignKey: "user_id",
-      onDelete: "cascade",
-    })
-  }
+      through: 'user_food',
+      foreignKey: 'user_id',
+      onDelete: 'cascade',
+    });
+  };
   return User;
 };
 

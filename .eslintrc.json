@@ -2,9 +2,9 @@
   "extends": "airbnb",
   "parser": "babel-eslint",
   "globals": {
-    "it": true,
-    "describe": true,
-    "document": true,
+    "it": true,        
+    "describe": true,  
+    "document": true,  
     "window": true
   },
   "rules": {
@@ -13,10 +13,7 @@
     "jsx-a11y/no-static-element-interactions": 0,
     "no-use-before-define": 0,
     "no-unused-expressions": 0,
-    "max-len": [1, {
-      "code": 80,
-      "ignoreTrailingComments": true
-    }],
+    "max-len": [1, { "code": 80, "ignoreTrailingComments": true }],
     "no-shadow": 0,
     "prefer-const": 1,
     "quote-props": [1, "consistent-as-needed"],
@@ -26,16 +23,13 @@
       "extensions": [".js", ".jsx"]
     }],
     "react/no-array-index-key": 0,
-    "space-before-function-paren": [2, {
-      "anonymous": "always",
-      "named": "never"
-    }],
+    "space-before-function-paren": [2, {"anonymous": "always", "named": "never"}],
     "no-unused-vars": 0,
     "prefer-destructuring": 0,
     "prefer-arrow-callback": 1,
     "no-console": 0,
     "func-names": ["error", "never"],
     "consistent-return": 0,
-    "camelcase": 0
+    "camelcase": 0    
   }
-}
+ }

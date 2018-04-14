@@ -1,4 +1,4 @@
-module.exports = function (sequelize, DataTypes) {
+module.exports = (sequelize, DataTypes) => {
   const Food = sequelize.define('Food', {
     id: {
       type: DataTypes.INTEGER,
@@ -19,18 +19,17 @@ module.exports = function (sequelize, DataTypes) {
         len: [ 1 ],
       },
     },
-    category: DataTypes.STRING
-}, {
+    category: DataTypes.STRING,
+  }, {
     timestamps: false,
     freezeTableName: true,
-});
+  });
 
   Food.associate = (models) => {
     Food.belongsToMany(models.User, {
-      through: "user-food",
-      foreignKey: "food_id",
-      onDelete: "cascade"
-    })
-  }
-
+      through: 'user-food',
+      foreignKey: 'food_id',
+      onDelete: 'cascade',
+    });
+  };
 };

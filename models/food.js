@@ -24,7 +24,6 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     freezeTableName: true,
   });
-
   Food.associate = (models) => {
     Food.belongsToMany(models.User, {
       through: 'user-food',
@@ -32,4 +31,5 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'cascade',
     });
   };
+  return Food;
 };

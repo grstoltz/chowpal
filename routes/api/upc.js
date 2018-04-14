@@ -1,10 +1,11 @@
-const router = require("express").Router();
+const router = require('express').Router();
 const upcController = require('../../controllers/upcController');
 
-router.route("/")
-    .post(upcController.getUPC)
+const newLocal = upcController.getUPC;
+router.route('/')
+  .post(newLocal);
 
-router.route("/data")
-    .post(upcController.getUPCData)
+router.route('/data')
+  .post(upcController.getUPCData);
 
 module.exports = router;

@@ -11,23 +11,23 @@
     "array-bracket-spacing": [2, "always"],
     "jsx-quotes": [1, "prefer-single"],
     "jsx-a11y/no-static-element-interactions": 0,
+    "no-use-before-define": 0,
+    "no-unused-expressions": 0,
     "max-len": [1, { "code": 80, "ignoreTrailingComments": true }],
     "no-shadow": 0,
     "prefer-const": 1,
     "quote-props": [1, "consistent-as-needed"],
     "react/no-multi-comp": 0,
     "react/prop-types": 0,
-    "react/jsx-filename-extension": [1, {
-      "extensions": [".js", ".jsx"]
-    }],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/no-array-index-key": 0,
     "space-before-function-paren": [2, {"anonymous": "always", "named": "never"}],
     "no-unused-vars": 0,
     "prefer-destructuring": 0,
     "prefer-arrow-callback": 1,
     "no-console": 0,
-    "func-names": 1,
+    "func-names": ["error", "never"],
     "consistent-return": 0,
-    "camelcase": 0
+    "camelcase": 0    
   }
-}
+ }

@@ -19,6 +19,7 @@ module.exports = (sequelize, DataTypes) => {
         len: [ 1 ],
       },
     },
+
     brand: DataTypes.STRING,
   }, {
     timestamps: false,
@@ -26,10 +27,10 @@ module.exports = (sequelize, DataTypes) => {
   });
   Food.associate = (models) => {
     Food.belongsToMany(models.User, {
-      through: 'user-food',
+      through: 'user_food',
       foreignKey: 'food_id',
       onDelete: 'cascade',
     });
   };
-  return Food;
+   return Food;
 };

@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     timestamps: false,
   });
-  User.associate = (models) => {
+  User.associate = (models) => 
     User.belongsToMany(models.Food, {
       through: 'user-food',
       foreignKey: 'user_id',

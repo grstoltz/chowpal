@@ -5,13 +5,14 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import MaterialButton from '../SelectButton/MaterialButton.js';
 import './ChowNav.css';
 
+
 export default class MaterialNav extends React.Component {
     render() {
         return (
             <Router>
                 <Navbar color="green darken-4" dark expand="md" scrolling>
                     <NavbarBrand href="/">
-                        <strong>Logo Here</strong>
+                         <img src="./logo.png" height="50"/>
                     </NavbarBrand>
                         <NavbarNav left>
                           <NavItem>

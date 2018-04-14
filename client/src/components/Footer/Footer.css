@@ -3,3 +3,17 @@
     margin-top: 15%;
     text-align: center;
 }
+
+.badge-pill {
+    min-width: 3rem;
+    padding: 1px 5px;
+    margin-left: 14px;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 22px;
+    height: 22px;
+    color: #757575;
+    float: left;
+    box-sizing: border-box;
+    margin: 10px;
+}

@@ -12,7 +12,7 @@ const Main = () => (
         <Container>
             <h1 className="pantryHead">My Pantry</h1>
             <MaterialList ></MaterialList>
-            <MaterialButton buttonText='Take me somewhere' iconClass='fa fa-camera-retro ml-2 fa-lg' buttonColor='success'></MaterialButton>
+            <MaterialButton buttonText='Take me somewhere' iconClass='fa fa-camera-retro ml-2 fa-lg' buttonColor='white'></MaterialButton>
         </Container>
     </div>
 )

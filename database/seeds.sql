@@ -90,3 +90,12 @@ INSERT INTO user_food( user_id, food_id )
   VALUES ( '2' , '5' );
   INSERT INTO user_food( user_id, food_id )
   VALUES ( '2' , '6' );
+
+select count(*)
+from food
+
+select length(UPC), count(*)
+from food
+group by length(UPC)
+
+UPDATE food SET UPC = LPAD(UPC, 12, '0');

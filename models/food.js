@@ -19,12 +19,12 @@ module.exports = (sequelize, DataTypes) => {
         len: [ 1 ],
       },
     },
-    category: DataTypes.STRING,
+
+    brand: DataTypes.STRING,
   }, {
     timestamps: false,
     freezeTableName: true,
   });
-
   Food.associate = (models) => {
     Food.belongsToMany(models.User, {
       through: 'user_food',
@@ -32,5 +32,5 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'cascade',
     });
   };
-  return Food;
+   return Food;
 };

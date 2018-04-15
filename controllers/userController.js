@@ -7,19 +7,24 @@ exports.callback = function (req, res) {
     where: {
       user_id: req.user.id,
     },
+    defaults: {
+      user_id: req.user.id,
+      username: req.user.displayName,
+    },
   }).then((result) => {
     console.log(result);
     res.redirect('/');
   });
 };
 
+exports.logout = function (req, res) {
+  req.logout();
+  res.redirect('/');
+};
+
 // Display list of all items.
-exports.findAll = function (req, res) {
-  res.send('NOT IMPLEMENTED: item list');
-  db.User.createOne({
-    user_id: req.body.user.id,
-  }).then(result => res.send(result))
-    .catch(err => console.log(err));
+exports.findUser = function (req, res) {
+  res.json(req.user);
 };
 
 // Display detail page for a specific item.

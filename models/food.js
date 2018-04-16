@@ -26,9 +26,9 @@ module.exports = (sequelize, DataTypes) => {
   });
   Food.associate = (models) => {
     Food.belongsToMany(models.User, {
-      through: 'user-food',
+      through: models.User_Food,
       foreignKey: 'food_id',
-      onDelete: 'cascade',
+      onDelete: 'CASCADE',
     });
   };
   return Food;

@@ -2,7 +2,14 @@
   "name": "mern",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001/",
+  "proxy": {
+    "/api": {
+      "target": "http://localhost:3001/"
+    },
+    "/auth": {
+      "target": "http://localhost:3001/"
+    }
+  },
   "dependencies": {
     "bootstrap": "^4.0.0",
     "font-awesome": "4.7.0",

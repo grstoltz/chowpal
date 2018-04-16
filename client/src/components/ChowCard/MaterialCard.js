@@ -1,5 +1,5 @@
 
-import React, {Component} from 'react';
+import React from 'react';
 import { Button, Card, CardBody, CardImage, CardTitle, CardText } from 'mdbreact';
 
 export default class MaterialCard extends React.Component {

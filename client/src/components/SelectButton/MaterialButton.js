@@ -5,7 +5,7 @@ export default class MaterialButton extends React.Component {
     render() {
         return (
             <div>
-                <Button outline color="primary">{this.props.buttonText}</Button>
+                <Button outline color={this.props.buttonColor}>{this.props.buttonText}<i class={this.props.iconClass}></i></Button>
             </div>
         );
     }

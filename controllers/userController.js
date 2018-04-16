@@ -1,7 +1,6 @@
 const models = require('../models');
 
 const db = models.db;
-// var Op = models.Op
 
 // Display list of all items.
 exports.findAll = function (req, res) {
@@ -10,9 +9,20 @@ exports.findAll = function (req, res) {
   });
 };
 
+exports.callback = function (req, res) {
+  db.User.findOrCreate({
+    where: {
+      user_id: req.user.id,
+    },
+  }).then((result) => {
+    console.log(result);
+    res.redirect('/');
+  });
+};
+
 // Display detail page for a specific item.
 exports.findOne = function (req, res) {
-  res.send(`NOT IMPLEMENTED: item detail: ' ${req.params.id}`);
+  res.send(`NOT IMPLEMENTED: item detail: ${req.params.id}`);
 };
 
 // Handle item create on POST.
@@ -22,7 +32,7 @@ exports.createOne = function (req, res) {
 
 // Display item delete form on DELETE.
 exports.deleteOne = function (req, res) {
-  res.send(`NOT IMPLEMENTED: item delete on DELETE' ${req.params.id}`);
+  res.send(`NOT IMPLEMENTED: item delete on DELETE ${req.params.id}`);
 };
 
 // Handle item update on Update.

@@ -9,17 +9,6 @@ exports.findAll = function (req, res) {
   });
 };
 
-exports.callback = function (req, res) {
-  db.User.findOrCreate({
-    where: {
-      user_id: req.user.id,
-    },
-  }).then((result) => {
-    console.log(result);
-    res.redirect('/');
-  });
-};
-
 // Display detail page for a specific item.
 exports.findOne = function (req, res) {
   res.send(`NOT IMPLEMENTED: item detail: ${req.params.id}`);

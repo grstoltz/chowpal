@@ -5,20 +5,6 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       autoIncrement: true,
     },
-    user_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      validate: {
-        len: [ 1 ],
-      },
-    },
-    food_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      validate: {
-        len: [ 1 ],
-      },
-    },
   }, {
     timestamps: false,
     freezeTableName: true,

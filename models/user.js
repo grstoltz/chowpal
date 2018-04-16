@@ -21,12 +21,13 @@ module.exports = (sequelize, DataTypes) => {
     },
   }, {
     timestamps: false,
+    freezeTableName: true,
   });
   User.associate = (models) => {
     User.belongsToMany(models.Food, {
-      through: 'user_food',
+      through: models.User_Food,
       foreignKey: 'user_id',
-      onDelete: 'cascade',
+      onDelete: 'CASCADE',
     });
   };
   return User;

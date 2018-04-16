@@ -27,10 +27,10 @@ module.exports = (sequelize, DataTypes) => {
   });
   Food.associate = (models) => {
     Food.belongsToMany(models.User, {
-      through: 'user_food',
+      through: models.User_Food,
       foreignKey: 'food_id',
-      onDelete: 'cascade',
+      onDelete: 'CASCADE',
     });
   };
-   return Food;
+  return Food;
 };

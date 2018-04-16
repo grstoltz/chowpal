@@ -15,22 +15,6 @@ router.get('/api/test', (req, res) => {
   });
 });
 
-router.get('/api/food', (req, res) => {
-  console.log('******************************************');
-  console.log('Hello food');
-  res.json({
-    message: 'Router testing food route',
-  });
-});
-
-router.get('/api/user', (req, res) => {
-  console.log('******************************************');
-  console.log('Hello User');
-  res.json({
-    message: 'Router testing user route',
-  });
-});
-
 // If no API routes are hit, send the React app
 // router.use((req, res) => {
 //   res.sendFile(path.join(__dirname, '../client/build/index.html'));

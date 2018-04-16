@@ -15,8 +15,6 @@ router.get('/api/test', (req, res) => {
   });
 });
 
-<<<<<<< HEAD
-=======
 router.get('/api/test/food', (req, res) => {
   console.log('******************************************');
   console.log('Hello food');
@@ -33,7 +31,6 @@ router.get('/api/test/user', (req, res) => {
   });
 });
 
->>>>>>> 60e0b1248ee4ccb220a91e33506620ced297659d
 // If no API routes are hit, send the React app
 // router.use((req, res) => {
 //   res.sendFile(path.join(__dirname, '../client/build/index.html'));

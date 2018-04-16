@@ -1,6 +1,8 @@
 const path = require('path');
 const router = require('express').Router();
 const apiRoutes = require('./api');
+const authRoutes = require('./auth');
+
 // API Routes
 router.use('/api', apiRoutes);
 
@@ -13,7 +15,6 @@ router.get('/api/test', (req, res) => {
   });
 });
 
-<<<<<<< HEAD
 router.get('/api/food', (req, res) => {
   console.log('******************************************');
   console.log('Hello food');
@@ -29,8 +30,6 @@ router.get('/api/user', (req, res) => {
     message: 'Router testing user route',
   });
 });
-=======
->>>>>>> cedd314753cc9a55c621c0b65faaa207ce1fdb1b
 
 // If no API routes are hit, send the React app
 // router.use((req, res) => {

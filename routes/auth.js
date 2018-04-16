@@ -27,10 +27,13 @@ passport.deserializeUser((user, done) => {
   done(null, user);
 });
 
-router.route('/google')
+router.route('/login')
   .get(passport.authenticate('google', { scope: [ 'https://www.googleapis.com/auth/plus.login' ] }));
 
 router.route('/google/callback')
   .get(passport.authenticate('google', { failureRedirect: '/' }), userController.callback);
+
+router.route('/logout')
+  .get(userController.logout);
 
 module.exports = router;

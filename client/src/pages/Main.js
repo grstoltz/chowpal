@@ -12,9 +12,8 @@ import {get} from 'axios';
 const Main = () => (
     <div>
         <Container>
-
             <h1 className="pantryHead">My Pantry</h1>
-            <MaterialButton link="/auth/google" text="Login" />
+            <MaterialButton link="/auth/login" text="Login" />
             <MaterialList ></MaterialList>
             <MaterialButton buttonText='Take me somewhere' iconClass='fa fa-camera-retro ml-2 fa-lg' buttonColor='white'></MaterialButton>
         </Container>

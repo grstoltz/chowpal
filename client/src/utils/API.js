@@ -2,11 +2,11 @@ import axios from "axios";
 
 export default {
     // Gets all food
-    getFood: function () {
+    getPantryItems: function () {
         return axios.get('/api/food');
     },
     // Gets all items
-    getItem: function () {
+    getItems: function () {
         return axios.get('/api/item');
     }
   

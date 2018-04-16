@@ -1,5 +1,6 @@
 const models = require('../models');
 
+<<<<<<< HEAD
 const db = models.db;
 
 // Display list of all foods.
@@ -10,6 +11,20 @@ const db = models.db;
 //     res.send(result);
 //   });
 // };
+=======
+const db = models.db;
+
+// Display list of all foods.
+const db = models.db;
+
+// Display list of all foods.
+exports.findAll = function (req, res) {
+  console.log(req.isAuthenticated());
+  db.Food.findAll().then((result) => {
+    res.send(result);
+  });
+};
+>>>>>>> 60e0b1248ee4ccb220a91e33506620ced297659d
 
 // Display detail page for a specific food.
 exports.findUserFood = function (req, res) {

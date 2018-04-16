@@ -2,11 +2,29 @@ const models = require('../models');
 
 const db = models.db;
 
-// Display list of all items.
-exports.findAll = function (req, res) {
-  db.User.findAll().then((result) => {
-    res.send(result);
+exports.callback = function (req, res) {
+  db.User.findOrCreate({
+    where: {
+      user_id: req.user.id,
+    },
+    defaults: {
+      user_id: req.user.id,
+      username: req.user.displayName,
+    },
+  }).then((result) => {
+    console.log(result);
+    res.redirect('/');
   });
+};
+
+exports.logout = function (req, res) {
+  req.logout();
+  res.redirect('/');
+};
+
+// Display list of all items.
+exports.findUser = function (req, res) {
+  res.json(req.user);
 };
 
 // Display detail page for a specific item.

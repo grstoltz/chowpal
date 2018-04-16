@@ -11,6 +11,7 @@ const db = models.db;
 // Display list of all foods.
 >>>>>>> cedd314753cc9a55c621c0b65faaa207ce1fdb1b
 exports.findAll = function (req, res) {
+  console.log(req.isAuthenticated());
   db.Food.findAll().then((result) => {
     res.send(result);
   });

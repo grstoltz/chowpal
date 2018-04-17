@@ -3,25 +3,24 @@ const models = require('../models');
 const db = models.db;
 
 // Display list of all foods.
-const db = models.db;
-
-// Display list of all foods.
-exports.findAll = function (req, res) {
-  console.log(req.isAuthenticated());
-  db.Food.findAll().then((result) => {
-    res.send(result);
-  });
-};
+// exports.findAll = function (req, res) {
+//   console.log(req.isAuthenticated());
+//   console.log('In FindAll');
+//   db.Food.findAll().then((result) => {
+//     res.send(result);
+//   });
+// };
 
 // Display detail page for a specific food.
 exports.findUserFood = function (req, res) {
-  db.Food.findOne({
+  console.log('In FindUserAll - ');
+  db.User.findAll({
     include: [ {
-      model: db.User,
-      where: { user_id: req.params.id },
+      model: db.Food,
+      through: {
+        // where: { user_id: 108480614932320425425 },
+      },
     } ],
-  }).then((result) => {
-    res.send(result);
   });
 };
 

@@ -5,6 +5,13 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       autoIncrement: true,
     },
+    user_id: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [ 1 ],
+      },
+    },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -19,18 +26,14 @@ module.exports = (sequelize, DataTypes) => {
         len: [ 1 ],
       },
     },
-
     brand: DataTypes.STRING,
+    purchase_date: {
+      type: DataTypes.DATE,
+      defaultValue: sequelize.NOW,
+    },
   }, {
     timestamps: false,
     freezeTableName: true,
   });
-  Food.associate = (models) => {
-    Food.belongsToMany(models.User, {
-      through: models.User_Food,
-      foreignKey: 'food_id',
-      onDelete: 'CASCADE',
-    });
-  };
   return Food;
 };

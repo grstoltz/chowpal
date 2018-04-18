@@ -7,7 +7,7 @@
 .badge-pill {
     min-width: 3rem;
     padding: 1px 5px;
-    margin-left: 14px;
+    margin-left: 3px;
     text-align: center;
     font-size: 1rem;
     line-height: 22px;
@@ -15,5 +15,5 @@
     color: #757575;
     float: left;
     box-sizing: border-box;
-    margin: 10px;
+    margin: 3px;
 }

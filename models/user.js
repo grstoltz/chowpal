@@ -23,10 +23,10 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     freezeTableName: true,
   });
-  User.associate = (models) => {
-    User.belongsToMany(models.Food, {
-      through: models.User_Food,
-      foreignKey: 'user_id',
+  User.associate = function (models) {
+    // Associating User with Food
+    // When an User is deleted, also delete any associated Foods
+    User.hasMany(models.Food, {
       onDelete: 'CASCADE',
     });
   };

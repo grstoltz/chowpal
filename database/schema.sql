@@ -5,21 +5,24 @@ USE chowpal_db;
 
 CREATE TABLE user (
   id int(11) AUTO_INCREMENT NOT NULL,
-  user_id varchar(255) NOT NULL,
+  userID varchar(255) NOT NULL,
   user_name varchar(255),
   PRIMARY KEY (id)
 );
 
 CREATE TABLE food (
   id int(11) AUTO_INCREMENT NOT NULL,
+  user_id int(11) NOT NULL,
   name varchar(255) NOT NULL,
   UPC varchar(255),
   brand varchar(255),
+  purchase_date DATE,
   PRIMARY KEY (id)
 );
 
 CREATE TABLE item (
   id int(11) AUTO_INCREMENT NOT NULL,
+  user_id int(11) NOT NULL,
   UPC varchar(255) NOT NULL,
   store varchar(255),
   product_name varchar(255),
@@ -27,10 +30,11 @@ CREATE TABLE item (
   PRIMARY KEY (id)
 );
 
-CREATE TABLE user_food (
+CREATE TABLE food_lookUp (
   id int(11) AUTO_INCREMENT NOT NULL,
-  user_id int(11) NOT NULL,
-  food_id int(11) NOT NULL,
+  name varchar(255) NOT NULL,
+  UPC varchar(255),
+  brand varchar(255),
   PRIMARY KEY (id)
 );
 

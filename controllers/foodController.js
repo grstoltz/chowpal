@@ -14,14 +14,43 @@ const db = models.db;
 // Display detail page for a specific food.
 exports.findUserFood = function (req, res) {
   console.log('In FindUserAll - ');
-  db.User.findAll({
-    include: [ {
-      model: db.Food,
-      through: {
-        // where: { user_id: 108480614932320425425 },
+  db.User
+    .findAll({
+      include: [ {
+        model: db.Food,
+        through: {
+        // where: { user_id: req.body.user_id },
+        },
+      } ],
+    })
+    .then((result) => {
+      res.send(result);
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+};
+
+// Handle item update on Update.
+// Handle item update on Update.
+exports.findOneAndUpdate = function (req, res) {
+  const theDate = new Date();
+  console.log('The Date - ', theDate);
+  db.Food
+    .findUserFood(db.User, {
+      through: { purchase_date: theDate },
+      where: {
+        user_id: 3,
+        food_id: 223,
       },
-    } ],
-  });
+      // where: { user_id: req.body.user_id },
+    })
+    .then((result) => {
+      res.send(result);
+    })
+    .catch((err) => {
+      res.send(err);
+    });
 };
 
 // Display detail page for a specific food.

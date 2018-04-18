@@ -1,24 +1,28 @@
 module.exports = (sequelize, DataTypes) => {
-  const Item = sequelize.define('Item', {
+  const Food_LookUp = sequelize.define('Food_LookUp', {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    user_id: {
-      type: DataTypes.INTEGER,
+    name: {
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [ 1 ],
       },
     },
-    UPC: DataTypes.STRING,
-    store: DataTypes.STRING,
-    product_name: DataTypes.STRING,
-    product_id: DataTypes.STRING,
+    UPC: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [ 1 ],
+      },
+    },
+    brand: DataTypes.STRING,
   }, {
     timestamps: false,
     freezeTableName: true,
   });
-  return Item;
+  return Food_LookUp;
 };

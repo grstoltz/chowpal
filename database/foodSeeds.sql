@@ -1,6 +1,6 @@
-drop table food
+drop table Food_LookUp
 
-CREATE TABLE food (
+CREATE TABLE Food_LookUp (
   id int(11) AUTO_INCREMENT NOT NULL,
   name varchar(255) NOT NULL,
   UPC varchar(255),
@@ -8,10 +8,10 @@ CREATE TABLE food (
   PRIMARY KEY (id)
 );
 
-INFILE '/Users/trish/Grocery.csv'
+LOAD DATA LOCAL INFILE '/Users/trish/Grocery.csv'
 
 LOAD DATA LOCAL INFILE '/Chowpal/database/Grocery.csv'
-INTO TABLE chowpal_db.food
+INTO TABLE chowpal_db.food_lookUP
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'

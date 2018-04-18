@@ -16,9 +16,9 @@ import MaterialCard from '../components/ChowCard/MaterialCard.js';
 import MaterialButton from '../components/SelectButton/MaterialButton.js';
 import CardModal from '../components/Modal/CardModal.js';
 
-storiesOf('Modal', module).add('input modal', () => <Modal />);
-storiesOf('CardModal', module).add('card modal', () => <CardModal />);
-storiesOf('MaterialButton', module).add('Material Button component', () => <MaterialButton />);
+storiesOf('Modal', module).add('input modal', () => <Modal buttonLabel='Modal' modalHead='Receipt Upload' modalBody='Choose a file to upload by clicking the button below'/>);
+storiesOf('CardModal', module).add('card modal', () => <CardModal buttonLabel='Modal' modalHead='Card Title'/>);
+storiesOf('MaterialButton', module).add('Material Button component', () => <MaterialButton buttonColor='primary' buttonText='Hello'/>);
 storiesOf('SelectButton', module).add('Standard Button component', () => <SelectButton />);
 storiesOf('Form', module).add('MVP Form', () => <Form />);
 // storiesOf('List', module).add('Early List Idea', () => <List />);

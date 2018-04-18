@@ -1,6 +1,6 @@
-INSERT INTO  user (userID, user_name ) VALUES ( '108480614932320425425', 'tmederos');
-INSERT INTO  user (userID, user_name ) VALUES ( '108480614932320425566', 'gstoltz');
-INSERT INTO  user (userID, user_name ) VALUES ( '108480614932320425577', 'tboardman');
+INSERT INTO  user (google_id, user_name ) VALUES ( '108480614932320425425', 'tmederos');
+INSERT INTO  user (google_id, user_name ) VALUES ( '108480614932320425566', 'gstoltz');
+INSERT INTO  user (google_id, user_name ) VALUES ( '108480614932320425577', 'tboardman');
 
 
 INSERT INTO food (user_id, name, UPC, brand, purchase_date )

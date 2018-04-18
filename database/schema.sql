@@ -5,7 +5,7 @@ USE chowpal_db;
 
 CREATE TABLE user (
   id int(11) AUTO_INCREMENT NOT NULL,
-  userID varchar(255) NOT NULL,
+  google_id varchar(255) NOT NULL,
   user_name varchar(255),
   PRIMARY KEY (id)
 );

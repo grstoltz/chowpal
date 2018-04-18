@@ -2,9 +2,9 @@
 import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import MaterialButton from '../SelectButton/MaterialButton.js';
-import Form from '../Form/Form.js';
+import PantryCard from '../PantryCard/PantryCard.js';
 
-class IModal extends React.Component {
+class LModal extends React.Component {
 
     constructor(props) {
         super(props);
@@ -28,10 +28,10 @@ class IModal extends React.Component {
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                     <ModalHeader toggle={this.toggle}>{this.props.modalHead}</ModalHeader>
                     <ModalBody>
-                       {this.props.modalBody}
+                       <PantryCard title='bigpoops' text='smallerpoops'></PantryCard>
                     </ModalBody>
                     <ModalFooter>
-                        <Form></Form>
+                        <MaterialButton buttonColor='success' buttonText='Something about the item'></MaterialButton>
                     </ModalFooter>
                 </Modal>
             </div>
@@ -39,4 +39,4 @@ class IModal extends React.Component {
     }
 }
 
-export default IModal;
+export default LModal;

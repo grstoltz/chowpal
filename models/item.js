@@ -12,7 +12,10 @@ module.exports = (sequelize, DataTypes) => {
         len: [ 1 ],
       },
     },
-    UPC: DataTypes.STRING,
+    UPC: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     store: DataTypes.STRING,
     product_name: DataTypes.STRING,
     product_id: DataTypes.STRING,
@@ -20,5 +23,10 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     freezeTableName: true,
   });
+  Item.associate = (models) => {
+    Item.belongsTo(models.User, {
+      foreignKey: 'user_id',
+    });
+  };
   return Item;
 };

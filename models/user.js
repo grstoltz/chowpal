@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       autoIncrement: true,
     },
-    user_id: {
+    google_id: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {

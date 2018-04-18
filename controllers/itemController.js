@@ -33,7 +33,7 @@ exports.findOrCreate = function (req, res) {
     },
     defaults: {
       product_name: req.body.product_name,
-      user_id: req.body.user.id,
+      user_id: req.body.user_id,
       store: req.body.store,
       UPC: null,
       product_id: req.body.product_id,

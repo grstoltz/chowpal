@@ -4,7 +4,7 @@ import { Col, Row, Footer } from 'mdbreact';
 class FooterPage extends React.Component {
     render(){
         return(
-            <Footer color="stylish-color" className="page-footer font-small pt-0">
+            <Footer color="special-color-dark" className="page-footer font-small pt-0">
                 <div style={{backgroundColor: '#1b5e20'}}>
                     <div className=" container text-left">
                         <div className="row py-4 d-flex align-items-center">

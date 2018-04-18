@@ -10,9 +10,9 @@ export default class MaterialNav extends React.Component {
     render() {
         return (
             <Router>
-                <Navbar color="green darken-4" dark expand="md" scrolling>
+                <Navbar color="special-color-dark" dark expand="md" scrolling>
                     <NavbarBrand href="/">
-                         <img src="./logo.png" height="50"/>
+                         <img src="./logoChowPalNew.png" height="50"/>
                     </NavbarBrand>
                         <NavbarNav left>
                           <NavItem>

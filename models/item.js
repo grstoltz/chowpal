@@ -7,7 +7,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     user_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       validate: {
         len: [ 1 ],
       },
@@ -23,10 +22,10 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     freezeTableName: true,
   });
-  Item.associate = (models) => {
-    Item.belongsTo(models.User, {
-      foreignKey: 'user_id',
-    });
-  };
+  // Item.associate = (models) => {
+  //   Item.belongsTo(models.User, {
+  //     foreignKey: 'user_id',
+  //   });
+  // };
   return Item;
 };

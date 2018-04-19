@@ -14,10 +14,10 @@ const db = models.db;
 // Handle item update on Update.
 
 // Display detail page for a specific food.
-exports.findOne = function (req, res) {
-  db.Food.findOne({
+exports.findAll = function (req, res) {
+  db.Food.findAll({
     where: {
-      id: req.params.id,
+      user_id: req.query.id,
     },
   }).then((result) => {
     res.send(result);
@@ -39,11 +39,11 @@ exports.createOne = function (req, res) {
 exports.deleteOne = function (req, res) {
   db.Food.destroy({
     where: {
-      id: req.params.id,
+      id: req.query.id,
     },
   }).then((result) => {
-    res.send(result);
-  });
+    res.json(result);
+  }).catch(err => console.log(err));
 };
 
 // Handle food update on Update.

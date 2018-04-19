@@ -1,1 +1,1 @@
-export { default } from "./MaterialCard";
+export { default } from './MaterialCard';

@@ -3,8 +3,6 @@ const foodController = require('../../controllers/foodController');
 
 router.route('/')
   // .get(foodController.findAll);
-  .get(foodController.findUserFood)
-  .get(foodController.findOne)
   .post(foodController.createOne)
   .put(foodController.findOneAndUpdate)
   .delete(foodController.deleteOne);

@@ -28,9 +28,11 @@ passport.deserializeUser((user, done) => {
 });
 
 router.route('/login')
+  /* eslint max-len: 0 */
   .get(passport.authenticate('google', { scope: [ 'https://www.googleapis.com/auth/plus.login' ] }));
 
 router.route('/google/callback')
+  /* eslint max-len: 0 */
   .get(passport.authenticate('google', { failureRedirect: '/' }), userController.callback);
 
 router.route('/logout')

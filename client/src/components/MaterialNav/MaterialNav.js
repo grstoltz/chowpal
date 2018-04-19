@@ -54,7 +54,7 @@ export default class MaterialNav extends React.Component {
                 </Navbar>
 
                 
-                <BootstrapModal visible={this.state.visible}   />
+                {/* <BootstrapModal visible={this.state.visible}   /> */}
                 {/* <NavModal modal={this.state.modal} toggle={this.state.toggle} buttonLabel='Modal' modalHead='Receipt Upload' modalBody='Choose a file to upload by clicking the button below' /> */}
             </div>
         );

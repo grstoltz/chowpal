@@ -12,48 +12,6 @@ const db = models.db;
 // };
 
 // Display detail page for a specific food.
-exports.findUserFood = function (req, res) {
-  console.log('In FindUserAll - ');
-  db.User
-    .findAll({
-      include: [ {
-        model: db.Food,
-        through: {
-        // where: { user_id: req.body.user_id },
-        },
-      } ],
-    })
-    .then((result) => {
-      res.send(result);
-    })
-    .catch((err) => {
-      res.send(err);
-    });
-};
-
-// Handle item update on Update.
-// Handle item update on Update.
-exports.findOneAndUpdate = function (req, res) {
-  const theDate = new Date();
-  console.log('The Date - ', theDate);
-  db.Food
-    .findUserFood(db.User, {
-      through: { purchase_date: theDate },
-      where: {
-        user_id: 3,
-        food_id: 223,
-      },
-      // where: { user_id: req.body.user_id },
-    })
-    .then((result) => {
-      res.send(result);
-    })
-    .catch((err) => {
-      res.send(err);
-    });
-};
-
-// Display detail page for a specific food.
 exports.findOne = function (req, res) {
   db.Food.findOne({
     where: {
@@ -66,21 +24,16 @@ exports.findOne = function (req, res) {
 
 // Handle food create on POST.
 exports.createOne = function (req, res) {
-  db.Food.findOrCreate({
-    where: {
-      UPC: req.body.UPC,
-    },
-    defaults: {
-      name: req.body.product_name,
-      UPC: req.body.UPC,
-      product_id: req.body.product_id,
-    },
-  }).spread((item, created) => {
-    (created ?
-      res.send({ created }) :
-      res.send(item.get({ plain: false }))
-    );
-  });
+  db.Food.create({
+    UPC: req.body.UPC,
+    user_id: req.body.user_id,
+    name: req.body.name,
+    brand: req.body.brand,
+    purchase_date: new Date(),
+  })
+    .then((result) => {
+      res.send(result);
+    });
 };
 
 // Display food delete form on DELETE.

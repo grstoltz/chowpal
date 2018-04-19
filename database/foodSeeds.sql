@@ -8,10 +8,8 @@ CREATE TABLE Food_LookUp (
   PRIMARY KEY (id)
 );
 
-LOAD DATA LOCAL INFILE '/Users/trish/Grocery.csv'
-
-LOAD DATA LOCAL INFILE '/Chowpal/database/Grocery.csv'
-INTO TABLE chowpal_db.food_lookUP
+LOAD DATA LOCAL INFILE '/Users/trish/chowpal/database/Grocery.csv'
+INTO TABLE chowpal_db.food_lookup
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
@@ -26,9 +24,9 @@ from food
 
 
 select length(UPC), count(*)
-from food
+from food_lookup
 group by length(UPC)
 
-UPDATE food SET UPC = LPAD(UPC, 12, '0');
+UPDATE food_lookup SET UPC = LPAD(UPC, 12, '0');
 
 select * from food

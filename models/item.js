@@ -23,10 +23,10 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     freezeTableName: true,
   });
-  Item.associate = (models) => {
-    Item.belongsTo(models.User, {
-      foreignKey: 'user_id',
-    });
-  };
+  // Item.associate = (models) => {
+  //   Item.belongsTo(models.User, {
+  //     foreignKey: 'user_id',
+  //   });
+  // };
   return Item;
 };

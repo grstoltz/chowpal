@@ -12,7 +12,9 @@ const sem3 = require('semantics3-node')(api_key, api_secret);
 
 // Gets UPC from an image of a barcode
 exports.getUPC = function (req, res) {
-  // Uses ZebraCrossing to parse an image file **Using a static image file currently**
+  // Uses ZebraCrossing to parse an image file **Using a static image
+  // file currently**
+  /* eslint max-len: 0 */
   ZebraCrossing.read(fs.readFileSync(path.join(__dirname, '../testupc.gif')), { pureBarcode: true })
     .then((data) => {
       const upcString = data.parsed.toString('utf-8');

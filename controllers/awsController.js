@@ -45,7 +45,7 @@ exports.processItem = function (req, res) {
       product_id: 'idstring',
     };
 
-    let options = {
+    const options = {
       method: 'post',
       body: params,
       json: true,
@@ -105,7 +105,8 @@ exports.processUPC = function (req, res) {
       url: 'http://localhost:3000/api/item/',
     };
 
-    // Takes the product name and queries the database, if the product name does not exist in the database a new item is created
+    // Takes the product name and queries the database, if the product name
+    // does not exist in the database a new item is created
     // See item controller for querying properties
     request(options, (err, httpResponse, body) => {
       if (err) {

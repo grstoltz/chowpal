@@ -23,13 +23,13 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     freezeTableName: true,
   });
-  User.associate = function (models) {
-    // Associating User with Food
-    // When an User is deleted, also delete any associated Foods
-    User.hasMany(models.Food, {
-      onDelete: 'CASCADE',
-    });
-  };
+  // User.associate = function (models) {
+  //   // Associating User with Food
+  //   // When an User is deleted, also delete any associated Foods
+  //   User.hasMany(models.Food, {
+  //     onDelete: 'CASCADE',
+  //   });
+  // };
   return User;
 };
 

@@ -5,7 +5,7 @@ import './List.css';
             
 export const PantryList = ({title, children}) => {
         return (
-            <div className="row mb-5">
+            <div className="row pb-5">
             <div className="col-12">
                 <div className="card card-outline-secondary">
                     <div className="card-header">

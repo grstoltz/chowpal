@@ -6,12 +6,12 @@ const Op = models.Op;
 
 // Display list of all items.
 exports.findAll = function (req, res) {
-  res.send('NOT IMPLEMENTED: item list');
   db.Item.findAll({
     where: {
-      user_id: req.body.id,
+      user_id: req.query.id,
+      UPC: '',
     },
-  });
+  }).then(results => res.send(results));
 };
 
 // Display detail page for a specific item.
@@ -54,7 +54,13 @@ exports.findOrCreate = function (req, res) {
 
 // Display item delete form on DELETE.
 exports.deleteOne = function (req, res) {
-  res.send(`NOT IMPLEMENTED: item delete on DELETE ${req.params.id}`);
+  db.Item.destroy({
+    where: {
+      id: req.query.id,
+    },
+  }).then((result) => {
+    res.json(result);
+  }).catch(err => console.log(err));
 };
 
 // Handle item update on Update.

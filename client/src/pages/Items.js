@@ -7,37 +7,37 @@ import PantryCard from "../components/PantryCard";
 import './Main.css';
 import API from "../utils/API";
 
-class Main extends Component {
+class Items extends Component {
 
     state = {
-        pantryItems: [],
-        user_id: 0
+        pendingItems: [],
     }
 
     componentDidMount(){
-        this.getPantryItems()
-        this.setState({user_id: 1})
+        this.getPendingItems()
        }
     
-    getPantryItems(){
-        API.getPantryItems({id: 1})
-          .then(result => this.setState({pantryItems: result.data}))
+    getPendingItems(){
+        API.getPendingItems({id: 1})
+          .then(result => this.setState({pendingItems: result.data}))
       }
 
-      handleDeleteButton = event => {
-        API.deleteFood({id: event.target.id}).then(this.getPantryItems())
+
+    handleDeleteButton = event => {
+        API.deleteItem(event.target.id).then(this.getPendingItems())
     }
 
+
       renderItems = () => {
-        return (this.state.pantryItems.length > 0 ?
-          this.state.pantryItems.map(item => (
+        return (this.state.pendingItems.length > 0 ?
+          this.state.pendingItems.map(item => (
           <PantryCard
             id={item.id}
             name={item.name}
             date={item.purchase_date}
             handleDeleteButton={this.handleDeleteButton}
           />
-        )) : <h5>Save some articles here!</h5>
+        )) : <h5>"No Pending Items!"</h5>
       );
       }
 
@@ -46,15 +46,16 @@ class Main extends Component {
     <div>
         <Container main={true}>
             <Row params="pt-3 pb-3">
-                <h1 className="text-center">My Pantry</h1>
+                <h1 className="text-center">My Items</h1>
             </Row>
             <PantryList title="My Items">
                {this.renderItems()}
             </PantryList>
         </Container>
     </div>
+    
         )
     }
 }
 
-export default Main;
+export default Items;

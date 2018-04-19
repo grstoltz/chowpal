@@ -4,7 +4,7 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import MaterialButton from '../SelectButton/MaterialButton.js';
 import Form from '../Form/Form.js';
 
-class IModal extends React.Component {
+class NavModal extends React.Component {
 
     constructor(props) {
         super(props);
@@ -39,4 +39,4 @@ class IModal extends React.Component {
     }
 }
 
-export default IModal;
+export default NavModal;

@@ -28,7 +28,7 @@ class LModal extends React.Component {
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                     <ModalHeader toggle={this.toggle}>{this.props.modalHead}</ModalHeader>
                     <ModalBody>
-                       <PantryCard title='bigpoops' text='smallerpoops'></PantryCard>
+                       <PantryCard title='Item Name' text='Item description'></PantryCard>
                     </ModalBody>
                     <ModalFooter>
                         <MaterialButton buttonColor='success' buttonText='Something about the item'></MaterialButton>

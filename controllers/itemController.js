@@ -37,14 +37,19 @@ exports.findOrCreate = function (req, res) {
       user_id: req.body.user_id,
       store: req.body.store,
       UPC: '',
-      product_id: req.body.product_id,
+    // product_id: req.body.product_id,
     // user_id: req.body.userid
     },
   }).then((result) => {
     const [ instance, wasCreated ] = result;
-    (wasCreated ?
-      res.send('Item Created') : res.send('Item already in database')
-    );
+    const UPCData = {
+      UPC: instance.UPC,
+    };
+    console.log(UPCData);
+    (instance.UPC !== '' ?
+      getUPCData(UPCData)
+        .then(data => createFood(req.body.user_id, data.results[0]))
+        .then(result => res.send(result)) : res.send('No associated food'));
   });
 };
 
@@ -60,5 +65,59 @@ exports.findOneAndUpdate = function (req, res) {
     UPC: req.body.UPC,
   }, {
     where: { id: req.body.id },
-  }).then(result => console.log(result));
+  }).then((result) => {
+    getUPCData(req.body)
+      .then(data => createFood(req.body.user_id, data.results[0]))
+      .then(result => res.send(result));
+  });
+};
+
+const getUPCData = function (requestBody) {
+  const params = {
+    UPC: requestBody.UPC,
+  };
+
+  const options = {
+    method: 'post',
+    body: params,
+    json: true,
+    url: 'http://localhost:3000/api/upc/data',
+  };
+
+  // Sends a quests to update the item with the UPC that was parsed
+  return new Promise((resolve) => {
+    request(options, (err, httpResponse, body) => {
+      if (err) {
+        console.log(err);
+      }
+      resolve(body);
+    });
+  });
+};
+
+const createFood = function (user_id, data) {
+  const params = {
+    UPC: data.upc,
+    user_id,
+    name: data.name,
+    brand: data.brand,
+  };
+
+  const options = {
+    method: 'post',
+    body: params,
+    json: true,
+    url: 'http://localhost:3000/api/food/',
+  };
+
+  // Sends a quests to update the item with the UPC that was parsed
+  return new Promise((resolve) => {
+    request(options, (err, httpResponse, body) => {
+      if (err) {
+        console.log(err);
+      }
+      console.log(body);
+      resolve(body);
+    });
+  });
 };

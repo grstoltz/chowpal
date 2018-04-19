@@ -11,6 +11,8 @@ const db = models.db;
 //   });
 // };
 
+// Handle item update on Update.
+
 // Display detail page for a specific food.
 exports.findOne = function (req, res) {
   db.Food.findOne({
@@ -30,10 +32,7 @@ exports.createOne = function (req, res) {
     name: req.body.name,
     brand: req.body.brand,
     purchase_date: new Date(),
-  })
-    .then((result) => {
-      res.send(result);
-    });
+  }).then(result => res.send(result));
 };
 
 // Display food delete form on DELETE.

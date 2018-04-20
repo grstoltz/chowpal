@@ -3,8 +3,8 @@
   "parser": "babel-eslint",
   "globals": {
     "it": true,
-    "before": true,       
-    "describe": true,  
+    "before": true, 
+    "describe": true,
     "document": true,  
     "window": true
   },

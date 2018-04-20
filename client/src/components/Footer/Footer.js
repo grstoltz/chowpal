@@ -23,21 +23,29 @@ class FooterPage extends React.Component {
                         </div>
 
                         <div md="4" lg="4" xl="2" className="col mb-4">
-                            <h6 className="text-uppercase font-weight-bold"><strong>Contact With Us</strong></h6>
+                            <h6 className="text-uppercase font-weight-bold"><strong>Contact</strong></h6>
                             <hr className="light-green accent-3 mb-4 mt-0 d-inline-block mx-auto" style={{width: '60px'}}/>
-                            <p><a href="#!">Alan Drake</a></p>
-                            <p><a href="#!">David Rodriguez</a></p>
-                            <p><a href="#!">Trish Mederos</a></p>
-                            <p><a href="#!">Grant Stolz</a></p>
-                             <p><a href="#!">Abby Thoresen</a></p>
+                            <p><a href="https://github.com/Bkagd">Alan Drake</a></p>
+                            <p><a href="https://github.com/tmederos">Trish Mederos</a></p>
+                            <p><a href="https://github.com/Davrod29">David Rodriguez</a></p>
+                            <p><a href="https://github.com/grstoltz">Grant Stolz</a></p>
+                             <p><a href="https://github.com/akt12345">Abby Thoresen</a></p>
                         </div>
                         <div md="4" lg="4" xl="2" className="col mb-4">
                             <h6 className="text-uppercase font-weight-bold"><strong>Technologies Used</strong></h6>
                             <hr className="light-green accent-3 mb-4 mt-0 d-inline-block mx-auto" style={{width: '60px'}}/>
-                            <span class="badge badge-pill green">React</span>
-                            <span class="badge badge-pill green">MySql</span>
-                            <span class="badge badge-pill green">MD Bootstrap</span>
-                            <span class="badge badge-pill green">JavaScript</span>
+                            <div>
+                           <a href="https://reactjs.org/" class="badge badge-black">React</a>
+                             <a href="https://nodejs.org/en/" class="badge badge-black">Node.js</a>
+                             <a href="https://expressjs.com/" class="badge badge-black">Express</a>
+                             <a href="https://www.mysql.com/" class="badge badge-black">MySQL</a>
+                             <a href="http://docs.sequelizejs.com/" class="badge badge-black">Sequelize</a>
+                             <a href="https://mdbootstrap.com/components" class="badge badge-black">Material Design for React Bootstrap</a>
+                             <a href="https://aws.amazon.com/?nc2=h_lg" class="badge badge-black">Amazon Web Services</a>
+                            <a href="#http://www.passportjs.org/" class="badge badge-black">Passport.js</a>
+                            <a href="https://www.semantics3.com/" class="badge badge-black">Semantic3</a>
+                            <a href="#!" class="badge badge-black">Zebra Crossing</a>
+                            </div>
                         </div>
                     </div>
                 </div>

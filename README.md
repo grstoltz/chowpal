@@ -1,6 +1,6 @@
 # chowpal
 
-![logo](https://github.com/grstoltz/chowpal/blob/master/client/public/logo.png)
+![logo](https://github.com/grstoltz/chowpal/blob/master/client/public/logoReadMeUse.png)
 
 ---
 # Overview
@@ -36,15 +36,14 @@ Technologies used
 * express npm Package - https://www.npmjs.com/package/express
 * sequelize npm Package - https://www.npmjs.com/package/sequelize
 * passport npm Package - https://www.npmjs.com/package/passport
+* passport-google-oauth20 npm Package - https://www.npmjs.com/package/passport-oauth2
 * dotenv npm Package - https://www.npmjs.com/package/dotenv
 * cookie-parser npm Package - https://www.npmjs.com/package/cookie-parser
 * mocha npm Package - https://mochajs.org/
 * chai npm Package - https://www.npmjs.com/package/chai
-* crypto
-* Zebra Crossing
-* Google Strategy
-* semantics3-node
-
+* Amazon Web Service - https://aws.amazon.com/
+* Zebra Crossing - https://github.com/zxing/zxing
+* semantics3-node - https://www.npmjs.com/package/semantics3-node-client
 
 
 ---

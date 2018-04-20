@@ -20,7 +20,7 @@ exports.processItem = function (req, res) {
       Image: {
         S3Object: {
           Bucket: process.env.S3_BUCKET,
-          Name: '1522990846497.jpeg',
+          Name: req.files[0].key,
         },
       },
     };
@@ -38,26 +38,30 @@ exports.processItem = function (req, res) {
     const itemArr = data.TextDetections.map(element => element.DetectedText);
     console.log(itemArr[2]);
 
-    const params = {
-      product_name: 'New Item',
-      store: 'target',
-      UPC: 'UPCSTRING',
-      product_id: 'idstring',
-    };
+    const productNameArray = [ 'ZuchinniGreen' ];
 
-    const options = {
-      method: 'post',
-      body: params,
-      json: true,
-      url: 'http://localhost:3000/api/item/',
-    };
+    productNameArray.forEach((product) => {
+      const params = {
+        store: req.body.store,
+        product_name: itemArr[2],
+        user_id: req.body.user_id,
+      };
 
-    request(options, (err, httpResponse, body) => {
-      if (err) {
-        console.log(err);
-        return res.json({ success: false, msg: 'cannot post to item route' });
-      }
-      res.json(httpResponse);
+      const options = {
+        method: 'post',
+        body: params,
+        json: true,
+        url: 'http://localhost:3000/api/item/',
+      };
+
+      request(options, (err, httpResponse, body) => {
+        if (err) {
+          console.log(err);
+          return res.json({ success: false, msg: 'cannot post to item route' });
+        }
+        console.log(body);
+        res.json(body);
+      });
     });
   };
 

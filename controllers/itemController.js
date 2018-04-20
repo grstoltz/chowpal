@@ -16,8 +16,13 @@ exports.findAll = function (req, res) {
 
 // Display detail page for a specific item.
 exports.findOne = function (req, res) {
-  res.send(`NOT IMPLEMENTED: item detail ${req.body.id}`);
+  db.Item.findAll({
+    where: {
+      id: req.params.id,
+    },
+  }).then(results => res.send(results));
 };
+
 
 // Handle item create on POST.
 exports.createOne = function (req, res) {

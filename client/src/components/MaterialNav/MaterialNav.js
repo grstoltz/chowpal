@@ -34,7 +34,7 @@ export default class MaterialNav extends React.Component {
             <div>
                 <Navbar color="special-color-dark" dark expand="md" scrolling>
                     <NavbarBrand>
-                    <NavLink to="/"><img src="./logoChowPalNew.png" height="50"/></NavLink>
+                    <NavLink to="/"><img src="/logoChowPalNew.png" height="50"/></NavLink>
                     </NavbarBrand>
                         <NavbarNav left>
                           <NavItem>

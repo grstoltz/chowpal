@@ -14,6 +14,7 @@ import 'mdbreact/dist/css/mdb.css';
 
 
 class App extends Component {
+
   render() {
     return (
       <Router>
@@ -21,8 +22,8 @@ class App extends Component {
           <MaterialNav />
           <Wrapper>
             <Route exact path="/" component={Main} />
-            <Route exact path="/home" component={Main} />
             <Route exact path="/upload" component={Upload} />
+            <Route exact path="/home" component={Main} />
             <Route exact path="/items" component={Items} />
             <Route exact path="/items/:id" component={Detail} />
             {/* <Route component={NoMatch} /> */}

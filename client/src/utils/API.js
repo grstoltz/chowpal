@@ -26,5 +26,8 @@ export default {
     },
     postReceiptImage: function (data){
         return axios.post('/api/aws', data)
+    },
+    getUserData: function (){
+        return axios.get('/api/user')
     }
 };

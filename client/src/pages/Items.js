@@ -9,14 +9,22 @@ class Items extends Component {
 
     state = {
         pendingItems: [],
+        user_id: null
+    }
+
+    getUserData(){
+        API.getUserData().then(result => {
+            this.setState({user_id: result.data.id})
+            this.getPendingItems(this.state.user_id)
+        });
     }
 
     componentDidMount(){
-        this.getPendingItems()
+        this.getUserData();
        }
     
-    getPendingItems(){
-        API.getPendingItems({id: 1})
+    getPendingItems(id){
+        API.getPendingItems({id: id})
           .then(result => this.setState({pendingItems: result.data}))
       }
 
@@ -24,7 +32,6 @@ class Items extends Component {
     handleDeleteButton = event => {
         API.deleteItem(event.target.id).then(this.getPendingItems())
     }
-
 
       renderItems = () => {
         return (this.state.pendingItems.length > 0 ?

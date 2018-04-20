@@ -11,17 +11,26 @@ class Main extends Component {
 
     state = {
         pantryItems: [],
-        user_id: 0
+        user_id: null
+    }
+    
+    componentDidMount(){
+        this.getUserData();
+    }
+    
+    getUserData(){
+        API.getUserData().then(result => {
+            console.log(result)
+            this.setState({user_id: result.data.id})
+            this.getPantryItems(this.state.user_id);
+        });
     }
 
-    componentDidMount(){
-        this.getPantryItems()
-        this.setState({user_id: 2})
-       }
-    
-    getPantryItems(){
-        API.getPantryItems({id: 1})
-          .then(result => this.setState({pantryItems: result.data}))
+    getPantryItems(id){
+        API.getPantryItems({id: id})
+          .then(result => {
+              this.setState({pantryItems: result.data})
+            });
       }
 
       handleDeleteButton = event => {

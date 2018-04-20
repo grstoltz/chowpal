@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import CardModal from '../Modal/CardModal.js';
 import './List.css';
         
-class PantryCard extends Component {
+class ModalCard extends Component {
     render(){
         return (
             <div className="card mb-2">
@@ -13,14 +12,13 @@ class PantryCard extends Component {
                         <span id= {this.props.id} aria-hidden="true">&times;</span>
                     </button>
                 </h5>
-                <CardModal />
-                <p className="card-text">Date Purchased: {this.props.date}</p>
+                <p className="card-text">Xtra Info</p>
             </div>
         </div>
         );
     }
 };
 
-export default PantryCard
+export default ModalCard;
 
          

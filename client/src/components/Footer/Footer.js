@@ -2,26 +2,26 @@ import React from 'react';
 import { Col, Row, Footer } from 'mdbreact';
 
 class FooterPage extends React.Component {
-    render(){
-        return(
-            <Footer color="special-color-dark" className="page-footer font-small">
-                <div style={{backgroundColor: '#1b5e20'}}>
-                    <div className=" container text-left">
-                        <div className="row py-4 d-flex align-items-center">
-                            <div md="6" lg="5" className="row text-center text-md-left mb-4 mb-md-0">
-                                <h6 className="mb-0 white-text">Get connected with us!</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="container mt-5 mb-4 text-center text-md-left">
-                    <div className="row mt-3">
-                        <div md="4" lg="4" xl="3" className="col mb-4">
-                            <h6 className="text-uppercase font-weight-bold"><strong>Chow Pal</strong></h6>
-                            <hr className="light-green accent-3 mb-4 mt-0 d-inline-block mx-auto" style={{width: '60px'}}/>
-                            <p>We are a team of bootcamp students working on this project like it's our full time job. Any amount of feedback would help support and continue development on this project and is greatly appreciated.</p>
-                        </div>
-
+  render() {
+    return (
+      <Footer color='special-color-dark' className='page-footer font-small'>
+        <div style={{ backgroundColor: '#1b5e20' }}>
+          <div className=' container text-left'>
+            <div className='row py-4 d-flex align-items-center'>
+              /* eslint max-len: 0 */
+              <div md='6' lg='5' className='row text-center text-md-left mb-4 mb-md-0'>
+                <h6 className='mb-0 white-text'>Get connected with us!</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className='container mt-5 mb-4 text-center text-md-left'>
+          <div className='row mt-3'>
+            <div md='4' lg='4' xl='3' className='col mb-4'>
+              <h6 className='text-uppercase font-weight-bold'><strong>Chow Pal</strong></h6>
+              <hr className='light-green accent-3 mb-4 mt-0 d-inline-block mx-auto' style={{ width: '60px' }} />
+              <p>We are a team of bootcamp students working on this project like it's our full time job. Any amount of feedback would help support and continue development on this project and is greatly appreciated.</p>
+            </div>
                         <div md="4" lg="4" xl="2" className="col mb-4">
                             <h6 className="text-uppercase font-weight-bold"><strong>Contact</strong></h6>
                             <hr className="light-green accent-3 mb-4 mt-0 d-inline-block mx-auto" style={{width: '60px'}}/>

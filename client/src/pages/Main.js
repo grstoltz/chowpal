@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import  Container from "../components/Grid/Container";
-import  Row from "../components/Grid/Row";
-import  Col from "../components/Grid/Col";
+import { Col, Row, Container } from "../components/Grid";
+// import  Row from "../components/Grid/Row";
+// import  Col from "../components/Grid/Col";
 import { PantryList } from "../components/PantryList";
 import PantryCard from "../components/PantryCard";
 import './Main.css';
@@ -16,7 +16,7 @@ class Main extends Component {
 
     componentDidMount(){
         this.getPantryItems()
-        this.setState({user_id: 1})
+        this.setState({user_id: 2})
        }
     
     getPantryItems(){

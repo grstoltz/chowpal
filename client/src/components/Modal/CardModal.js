@@ -1,5 +1,6 @@
 
 import React from 'react';
+/* eslint max-len: 0, react/prefer-stateless-function: 0 */
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import MaterialButton from '../SelectButton/MaterialButton';
 import ModalCard from '../ModalCard/ModalCard';

@@ -3,7 +3,7 @@ const itemController = require('../../controllers/itemController');
 
 router.route('/')
   .get(itemController.findAll)
-  .post(itemController.findOrCreate)
+  .post(itemController.createOne)
   .put(itemController.findOneAndUpdate)
   .delete(itemController.deleteOne);
 

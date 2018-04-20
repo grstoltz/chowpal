@@ -9,7 +9,7 @@ exports.findAll = function (req, res) {
   db.Item.findAll({
     where: {
       user_id: req.query.id,
-      UPC: '',
+      // UPC: '',
     },
   }).then(results => res.send(results));
 };
@@ -26,7 +26,20 @@ exports.findOne = function (req, res) {
 
 // Handle item create on POST.
 exports.createOne = function (req, res) {
-  res.send('NOT IMPLEMENTED: item create POST');
+  console.log(req.body);
+  db.Item.findOne({
+    where: {
+      product_name: req.body.product_name,
+    },
+  }).then((result) => {
+    console.log(result);
+    (result !== null && result.UPC ?
+      getUPCData({ UPC: result.UPC })
+        .then(data => createFood(req.body.user_id, data.results[0]))
+        .then(result => console.log(result)) :
+      createItem(req.body).then(result => res.json(result))
+    );
+  });
 };
 
 // Takes in a parsed product name and creates it if it isn't in the database -
@@ -42,8 +55,6 @@ exports.findOrCreate = function (req, res) {
       user_id: req.body.user_id,
       store: req.body.store,
       UPC: '',
-    // product_id: req.body.product_id,
-    // user_id: req.body.userid
     },
   }).then((result) => {
     const [ instance, wasCreated ] = result;
@@ -131,4 +142,13 @@ const createFood = function (user_id, data) {
       resolve(body);
     });
   });
+};
+
+const createItem = function (body) {
+  return db.Item.create({
+    product_name: body.product_name,
+    user_id: body.user_id,
+    store: body.store,
+    UPC: '',
+  }).then(result => result);
 };

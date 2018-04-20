@@ -13,11 +13,23 @@ class Detail extends Component {
         item: {},
         fileData: null,
         UPCText: null,
-        user_id: 2
+        user_id: null,
     };
     // When this component mounts, grab the book with the _id of this.props.match.params.id
     // e.g. localhost:3000/books/599dcb67f0f16317844583fc
-    componentDidMount() {
+    
+    componentDidMount(){
+        this.getUserData();
+    }
+    
+    getUserData(){
+        API.getUserData().then(result => {
+            this.setState({user_id: result.data.id})
+            this.getPendingItems(this.state.user_id);
+        });
+    }
+
+    getPendingItems(){
         API.getItem(this.props.match.params.id)
             .then(res => this.setState({ item: res.data[0] }))
             .catch(err => console.log(err));

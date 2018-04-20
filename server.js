@@ -22,7 +22,6 @@ app.use(cookieParser());
 
 app.use(passport.initialize());
 app.use(passport.session());
-
 app.use(routes);
 
 // Serve up static assets (usually on heroku)

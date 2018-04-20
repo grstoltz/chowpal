@@ -11,7 +11,7 @@ import Form from '../components/Form/Form.js';
 import ChowCard from '../components/ChowCard/ChowCard.js';
 // import ChowNav from '../components/ChowNav/ChowNav.js';
 import Footer from '../components/Footer/Footer.js';
-import MaterialCard from '../components/ChowCard/MaterialCard.js';
+import MaterialCard from '../components/ChowCard/MaterialCard.jsx';
 // import MaterialList from '../components/List/MaterialList.js';
 import MaterialButton from '../components/SelectButton/MaterialButton.js';
 import CardModal from '../components/Modal/CardModal.js';

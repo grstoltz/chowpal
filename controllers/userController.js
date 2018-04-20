@@ -5,10 +5,10 @@ const db = models.db;
 exports.callback = function (req, res) {
   db.User.findOrCreate({
     where: {
-      user_id: req.user.id,
+      google_id: req.user.id,
     },
     defaults: {
-      user_id: req.user.id,
+      google_id: req.user.id,
       username: req.user.displayName,
     },
   }).then((result) => {
@@ -22,14 +22,8 @@ exports.logout = function (req, res) {
   res.redirect('/');
 };
 
-// Display list of all items.
 exports.findUser = function (req, res) {
-  res.json(req.user);
-};
-
-// Display detail page for a specific item.
-exports.findOne = function (req, res) {
-  res.send(`NOT IMPLEMENTED: item detail: ${req.params.id}`);
+  res.send(req.user);
 };
 
 // Handle item create on POST.

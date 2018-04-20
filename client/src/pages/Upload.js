@@ -13,8 +13,18 @@ class Upload extends Component {
         item: {},
         fileData: null,
         store: null,
-        user_id: 2
+        user_id: null,
     };
+
+    componentDidMount(){
+        this.getUserData();
+    }
+
+    getUserData(){
+        API.getUserData().then(result => {
+            this.setState({user_id: result.data.id})
+        });
+    }
 
     handleSubmit = event => {
         event.preventDefault();

@@ -9,30 +9,38 @@ class Items extends Component {
 
     state = {
         pendingItems: [],
+        user_id: null
+    }
+
+    getUserData(){
+        API.getUserData().then(result => {
+            this.setState({user_id: result.data.id})
+            this.getPendingItems()
+        });
     }
 
     componentDidMount(){
-        this.getPendingItems()
+        this.getUserData();
        }
     
     getPendingItems(){
-        API.getPendingItems({id: 1})
+        API.getPendingItems({id: this.state.user_id})
           .then(result => this.setState({pendingItems: result.data}))
       }
 
 
     handleDeleteButton = event => {
-        API.deleteItem(event.target.id).then(this.getPendingItems())
+        console.log(event.target.id)
+        API.deleteItem({id: event.target.id}).then(this.getPendingItems())
     }
-
 
       renderItems = () => {
         return (this.state.pendingItems.length > 0 ?
           this.state.pendingItems.map(item => (
           <PantryCard
             id={item.id}
-            name={item.name}
-            date={item.purchase_date}
+            name={item.product_name}
+            // date={item.purchase_date}
             handleDeleteButton={this.handleDeleteButton}
           />
         )) : <h5>"No Pending Items!"</h5>

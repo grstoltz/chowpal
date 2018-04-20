@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true,
     },
     user_id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       validate: {
         len: [ 1 ],
       },

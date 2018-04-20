@@ -1,9 +1,9 @@
 
 import React from 'react';
 import { Navbar, NavbarBrand, NavbarNav, NavItem, NavLink } from 'mdbreact';
-import BootstrapModal from '../BootstrapModal'
+import Modal from '../Modal/Modal.js';
 import Form from '../Form/Form.js';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import MaterialButton from '../SelectButton/MaterialButton.js';
 import './MaterialNav.css';
 import API from "../../utils/API";

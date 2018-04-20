@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import CardModal from '../Modal/CardModal.js';
 import './List.css';
         
 class PantryCard extends Component {

@@ -8,15 +8,11 @@
 ChowPal is a web application for grocery shoppers who are unsatisfied with the current process of assembling a shopping list along with monitoring what foods they have purchased in the past and currently have in their possession. Our application is a smart alternative to the manual process of creating a grocery list and monitoring current supplies. Instead we will use automatic receipt parsing and product recognition to determine what foods you have in your possession. Unlike alternative applications that require manual entry of items or scanning of individual UPC codes, our product allows for the easy intake of multiple items at once by utilizing past users’ receipt data, allowing for a user to quickly see what they have or need to buy in the future.
 
 ---
-Check out the app running on heroku here: 
+Check out the app running on heroku here: http://chowpal.herokuapp.com
 
 ---
 # Screenshot - My Pantry
 ![Screenshot](https://github.com/grstoltz/chowpal/blob/master/client/public/mypantry.jpg)
-
----
-# Log-on Modal 
-![Screenshot](https://github.com/grstoltz/chowpal/blob/master/client/public/modal-login.jpg)
 
 ---
 # Receipt Upload

@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 /* eslint max-len: 0, react/prefer-stateless-function: 0 */
 import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import Button from 'mdbreact';
-import { Col, Row, Container } from '../components/Grid';
+import { Row, Container } from '../components/Grid';
 import { PantryList } from '../components/PantryList';
-import PantryCard from '../components/PantryCard';
 import './Main.css';
 import API from '../utils/API';
 

@@ -2,10 +2,6 @@
 import React from 'react';
 /* eslint max-len: 0, react/prefer-stateless-function: 0 */
 import { Navbar, NavbarBrand, NavbarNav, NavItem, NavLink } from 'mdbreact';
-import { Link } from 'react-router-dom';
-import Modal from '../Modal/Modal';
-import Form from '../Form/Form';
-import SelectButton from '../SelectButton';
 import './MaterialNav.css';
 import API from '../../utils/API';
 

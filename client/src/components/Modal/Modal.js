@@ -1,7 +1,7 @@
 
 import React from 'react';
 /* eslint max-len: 0, react/prefer-stateless-function: 0 */
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import SelectButton from '../SelectButton';
 import Form from '../Form/Form';
 import './Modal.css';

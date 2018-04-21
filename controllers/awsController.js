@@ -32,8 +32,6 @@ exports.processItem = function (req, res) {
     });
   };
 
-  sendRekcognition();
-
   const parseReceipt = function (data) {
     const conditions = [ 'SPECIAL', 'LOYALTY', 'NET', 'TOTAL', 'CASH', 'CHANGE', 'SUBTOTAL', 'DATE', 'KG' ];
     const itemArr = data.TextDetections.map(element => element.DetectedText.toUpperCase());
@@ -52,16 +50,17 @@ exports.processItem = function (req, res) {
         method: 'post',
         body: params,
         json: true,
-        url: 'http://localhost:3000/api/item/',
+        url: '/api/item/',
       };
 
       request(options, (err, httpResponse, body) => {
         if (err) {
           console.log(err);
-          return res.json({ success: false, msg: 'cannot post to item route' });
+          //  return res.json({ success: false, msg: 'cannot post to item route' });
         }
         console.log(body);
       });
     });
   };
+  sendRekcognition();
 };

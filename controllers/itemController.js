@@ -103,7 +103,7 @@ const getUPCData = function (requestBody) {
     method: 'post',
     body: params,
     json: true,
-    url: 'http://localhost:3000/api/upc/data',
+    url: '/api/upc/data',
   };
 
   // Sends a quests to update the item with the UPC that was parsed

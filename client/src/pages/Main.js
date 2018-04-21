@@ -36,7 +36,7 @@ class Main extends Component {
         API.deleteFood({ id: event.target.id }).then(this.getPantryItems());
       }
 
-      renderItems = () => (this.state.pantryItems.length > 0 ?
+      renderItems = () => (this.state.pantryItems.length > 0 && this.state.user_id ?
         this.state.pantryItems.map(item => (
           <PantryCard
             id={item.id}
@@ -44,7 +44,7 @@ class Main extends Component {
             date={item.purchase_date}
             handleDeleteButton={this.handleDeleteButton}
           />
-        )) : <h5>Save some articles here!</h5>
+        )) : <h5>Upload a receipt to get started!</h5>
       )
 
       render() {

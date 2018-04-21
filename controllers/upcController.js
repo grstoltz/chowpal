@@ -32,7 +32,7 @@ exports.getUPC = function (req, res) {
         method: 'put',
         body: params,
         json: true,
-        url: 'http://localhost:3000/api/item',
+        url: '/api/item',
       };
 
       // Sends a quests to update the item with the UPC that was parsed

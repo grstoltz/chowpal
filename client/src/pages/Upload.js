@@ -10,7 +10,6 @@ import API from '../utils/API';
 
 class Upload extends Component {
     state = {
-      item: {},
       fileData: null,
       store: null,
       user_id: null,

@@ -6,7 +6,8 @@
     "before": true, 
     "describe": true,
     "document": true,  
-    "window": true
+    "window": true,
+    "FormData": true
   },
   "rules": {
     "array-bracket-spacing": [2, "always"],
@@ -30,6 +31,7 @@
     "func-names": ["error", "never"],
     "consistent-return": 0,
     "camelcase": 0,
-    "linebreak-style": 0     
+    "linebreak-style": 0,
+    "import/prefer-default-export": 0     
   }
 }

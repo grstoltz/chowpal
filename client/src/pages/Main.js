@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { Col, Row, Container } from '../components/Grid';
-// import  Row from "../components/Grid/Row";
-// import  Col from "../components/Grid/Col";
+import { Row, Container } from '../components/Grid';
 import { PantryList } from '../components/PantryList';
 import PantryCard from '../components/PantryCard';
 import './Main.css';

@@ -1,6 +1,5 @@
 import React from 'react';
 // import { ListGroup, ListGroupItem } from 'mdbreact'
-import { Card, CardBody, CardImage, CardTitle, CardText } from 'mdbreact';
 import './List.css';
 
 export const PantryList = ({ title, children }) => (

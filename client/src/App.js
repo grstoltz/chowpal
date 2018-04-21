@@ -8,7 +8,6 @@ import Main from './pages/Main';
 import Items from './pages/Items';
 import Detail from './pages/Detail';
 import Upload from './pages/Upload';
-import NoMatch from './pages/NoMatch';
 import MaterialNav from './components/MaterialNav/MaterialNav';
 import Footer from './components/Footer';
 import Wrapper from './components/Wrapper/Wrapper';

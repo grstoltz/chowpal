@@ -1,6 +1,6 @@
 import React from 'react';
 /* eslint max-len: 0, react/prefer-stateless-function: 0 */
-import { Col, Row, Footer } from 'mdbreact';
+import { Footer } from 'mdbreact';
 
 class FooterPage extends React.Component {
   render() {

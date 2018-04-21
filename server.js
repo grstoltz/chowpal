@@ -1,4 +1,5 @@
 const dotenv = require('dotenv').config();
+const spawn = require('child_process').spawn;
 const express = require('express');
 const session = require('express-session');
 const path = require('path');
@@ -8,6 +9,8 @@ const bodyParser = require('body-parser');
 const routes = require('./routes');
 const models = require('./models');
 const passport = require('passport');
+
+const java = spawn('java', [ '-version' ]);
 
 const PORT = process.env.PORT || 3001;
 const app = express();

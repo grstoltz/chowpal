@@ -1,7 +1,7 @@
 const AWS = require('aws-sdk');
-const data = require('./awsRes.json');
-// const axios = require('axios');
 const request = require('request');
+const data = require('./awsRes.json');
+const _ = require('lodash');
 
 // Set your AWS credentials
 AWS.config.update({
@@ -28,22 +28,25 @@ exports.processItem = function (req, res) {
     rekognition.detectText(params, (err, data) => {
       if (err) console.log(err, err.stack); // an error occurred
       else console.log(data); // successful response
-      parseData(data);
+      parseReceipt(data);
     });
   };
 
-  // sendRekcognition()
+  sendRekcognition();
 
-  const parseData = function (data) {
-    const itemArr = data.TextDetections.map(element => element.DetectedText);
-    console.log(itemArr[2]);
+  const parseReceipt = function (data) {
+    const conditions = [ 'SPECIAL', 'LOYALTY', 'NET', 'TOTAL', 'CASH', 'CHANGE', 'SUBTOTAL', 'DATE', 'KG' ];
+    const itemArr = data.TextDetections.map(element => element.DetectedText.toUpperCase());
+    _.remove(itemArr, item => conditions.some(el => item.includes(el)));
+    const filteredItemArr = itemArr.map(el => el.replace(/[^A-Za-z\t ]+\s*/g, '').trim()).filter(el => el.length);
+    _.pullAll(filteredItemArr, conditions);
 
-    const productNameArray = [ 'ZuchinniGreen' ];
+    //res.send(filteredItemArr);
 
-    productNameArray.forEach((product) => {
+    filteredItemArr.forEach((product) => {
       const params = {
         store: req.body.store,
-        product_name: itemArr[2],
+        product_name: product,
         user_id: req.body.user_id,
       };
 
@@ -60,12 +63,9 @@ exports.processItem = function (req, res) {
           return res.json({ success: false, msg: 'cannot post to item route' });
         }
         console.log(body);
-        res.json(body);
       });
     });
   };
-
-  parseData(data);
 };
 
 exports.processUPC = function (req, res) {
@@ -92,7 +92,6 @@ exports.processUPC = function (req, res) {
   const parseData = function (data) {
     const itemArr = data.TextDetections.map(element => element.DetectedText);
     console.log(itemArr[2]);
-
     // item is currently hardcoded for testing purposes
     const params = {
       product_name: 'New Item',

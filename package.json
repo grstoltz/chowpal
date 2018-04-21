@@ -11,7 +11,7 @@
     "deploy": "yarn build && git add . && git commit -m \"Building for production\" && git push heroku master",
     "test:server": "env NODE_ENV=test mocha --exit",
     "test": "yarn lint && yarn test:server && yarn test:client",
-        "test:client": "cd client && yarn test",
+    "test:client": "cd client && yarn test",
     "lint": "eslint ."
   },
   "author": "",
@@ -37,6 +37,7 @@
     "dotenv": "^5.0.1",
     "express": "^4.15.4",
     "express-session": "^1.15.6",
+    "lodash": "^4.17.5",
     "morgan": "^1.9.0",
     "multer": "^1.3.0",
     "multer-s3": "^2.7.0",

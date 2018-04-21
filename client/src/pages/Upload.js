@@ -80,18 +80,17 @@ class Upload extends Component {
                   <Input type='file' name='file' onChange={this.handleFileChange} id='exampleFile' />
                   <FormText color='muted'>
                                 Upload an image from your camera or photo library.
-                  </FormText>
-                </FormGroup>
-                <FormGroup check row>
-                  <Col size='10'>
-                    <button type='button' onClick={this.handleSubmit} className='btn btn-primary'>Submit</button>
-                  </Col>
-                </FormGroup>
-              </Form>
-            </PantryList>
-          </Container>
-        </div>
-      );
+                        </FormText>
+                            </FormGroup>
+                            <FormGroup>
+                                    <button type="button" onClick={this.handleSubmit} className="btn btn-primary ml-0">Submit</button>
+                            </FormGroup>
+                        </Form>
+                    </PantryList>
+                </Container>
+            </div>
+        )
+
     }
 }
 

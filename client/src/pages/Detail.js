@@ -15,11 +15,9 @@ class Detail extends Component {
       UPCText: null,
       user_id: null,
     };
-    // When this component mounts, grab the book with the _id of this.props.match.params.id
-    // e.g. localhost:3000/books/599dcb67f0f16317844583fc
-
-    componentDidMount() {
-      this.getUserData();
+    
+    componentDidMount(){
+        this.getUserData();
     }
 
     getUserData() {
@@ -97,23 +95,23 @@ class Detail extends Component {
                   <Input type='file' name='file' onChange={this.handleFileChange} id='exampleFile' />
                   <FormText color='muted'>
                                     Upload an image from your camera or photo library.
-                  </FormText>
-                </FormGroup>
-                <h3 className='black-text pt-3'>Manually enter in a UPC</h3>
-                <FormGroup>
-                  <Label for='exampleText' className='black-text'>Enter a UPC Here</Label>
-                  <Input value={this.state.UPCText} onChange={this.handleInputChange} type='textarea' name='UPCText' id='exampleText' />
-                </FormGroup>
-                <FormGroup check row>
-                  <Col size='10'>
-                    <button type='button' onClick={this.handleSubmit} className='btn btn-primary'>Submit</button>
-                  </Col>
-                </FormGroup>
-              </Form>
-            </PantryList>
-          </Container>
-        </div>
-      );
+                        </FormText>
+                            </FormGroup>
+                            <h3 className="black-text pt-3">Manually enter in a UPC</h3>
+                            <FormGroup>
+                                <Label for="exampleText" className="black-text">Enter a UPC Here</Label>
+                                <Input value={this.state.UPCText} onChange={this.handleInputChange} type="textarea" name="UPCText" id="exampleText" />
+                            </FormGroup>
+                            <FormGroup check row>
+                                <Col size="10">
+                                    <button type="button" onClick={this.handleSubmit} className="btn btn-primary pl-0">Submit</button>
+                                </Col>
+                            </FormGroup>
+                        </Form>
+                    </PantryList>
+                </Container>
+            </div>
+        )
     }
 }
 

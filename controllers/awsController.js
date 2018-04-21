@@ -1,7 +1,7 @@
 const AWS = require('aws-sdk');
-const data = require('./awsRes.json');
-// const axios = require('axios');
 const request = require('request');
+const data = require('./awsRes.json');
+const _ = require('lodash');
 
 // Set your AWS credentials
 AWS.config.update({
@@ -34,13 +34,15 @@ exports.processItem = function (req, res) {
 
   // sendRekcognition()
 
-  const parseData = function (data) {
-    const itemArr = data.TextDetections.map(element => element.DetectedText);
-    console.log(itemArr[2]);
+  const parseReceipt = function (data) {
+    const itemArr = data.TextDetections.map(element => element.DetectedText.toUpperCase());
+    const regex = new RegExp('^[a-zA-Z][a-zA-Z0-9.,$;]+$');
+    const filteredArr = itemArr.filter(element => regex.test(element));
+    _.pullAll(filteredArr, [ 'SPECIAL', 'LOYALTY', 'NET', 'TOTAL', 'CASH', 'CHANGE', 'SUBTOTAL', 'DATE' ]);
+    
+    res.send(filteredArr);
 
-    const productNameArray = [ 'ZuchinniGreen' ];
-
-    productNameArray.forEach((product) => {
+    filteredArr.forEach((product) => {
       const params = {
         store: req.body.store,
         product_name: itemArr[2],
@@ -54,18 +56,18 @@ exports.processItem = function (req, res) {
         url: 'http://localhost:3000/api/item/',
       };
 
-      request(options, (err, httpResponse, body) => {
-        if (err) {
-          console.log(err);
-          return res.json({ success: false, msg: 'cannot post to item route' });
-        }
-        console.log(body);
-        res.json(body);
-      });
+      // request(options, (err, httpResponse, body) => {
+      //   if (err) {
+      //     console.log(err);
+      //     return res.json({ success: false, msg: 'cannot post to item route' });
+      //   }
+      //   console.log(body);
+      //   res.json(body);
+      // });
     });
   };
 
-  parseData(data);
+  parseReceipt(data);
 };
 
 exports.processUPC = function (req, res) {
@@ -92,6 +94,7 @@ exports.processUPC = function (req, res) {
   const parseData = function (data) {
     const itemArr = data.TextDetections.map(element => element.DetectedText);
     console.log(itemArr[2]);
+    
 
     // item is currently hardcoded for testing purposes
     const params = {

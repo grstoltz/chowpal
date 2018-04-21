@@ -3,6 +3,8 @@ const request = require('request');
 const data = require('./awsRes.json');
 const _ = require('lodash');
 
+const PORT = process.env.PORT || 3001;
+
 // Set your AWS credentials
 AWS.config.update({
   accessKeyId: process.env.AWS_ACCESS_KEY_ID,
@@ -32,8 +34,6 @@ exports.processItem = function (req, res) {
     });
   };
 
-  sendRekcognition();
-
   const parseReceipt = function (data) {
     const conditions = [ 'SPECIAL', 'LOYALTY', 'NET', 'TOTAL', 'CASH', 'CHANGE', 'SUBTOTAL', 'DATE', 'KG' ];
     const itemArr = data.TextDetections.map(element => element.DetectedText.toUpperCase());
@@ -52,7 +52,7 @@ exports.processItem = function (req, res) {
         method: 'post',
         body: params,
         json: true,
-        url: 'http://localhost:3000/api/item/',
+        url: `http://localhost:${PORT}/api/item/`,
       };
 
       request(options, (err, httpResponse, body) => {
@@ -64,4 +64,6 @@ exports.processItem = function (req, res) {
       });
     });
   };
+  sendRekcognition();
+  res.send({ success: 'Uploaded Successfully', status: 200 });
 };

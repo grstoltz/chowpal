@@ -5,12 +5,12 @@ const request = require('request');
 const crypto = require('crypto');
 const axios = require('axios');
 
+const PORT = process.env.PORT || 3001;
 const api_key = process.env.SEM3KEY;
 const api_secret = process.env.SEM3SECRET;
 
 const sem3 = require('semantics3-node')(api_key, api_secret);
 
-// Gets UPC from an image of a barcode
 exports.getUPC = function (req, res) {
   console.log(req.files);
   // Uses ZebraCrossing to parse an image file **Using a static image
@@ -32,7 +32,7 @@ exports.getUPC = function (req, res) {
         method: 'put',
         body: params,
         json: true,
-        url: 'http://localhost:3000/api/item',
+        url: `http://localhost:${PORT}/api/item`,
       };
 
       // Sends a quests to update the item with the UPC that was parsed
@@ -44,6 +44,7 @@ exports.getUPC = function (req, res) {
         return res.json(httpResponse);
       });
     });
+  res.end();
 };
 
 // Takes a UPC code and returns data from the digit-eyes API

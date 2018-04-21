@@ -24,7 +24,7 @@ class App extends Component {
             <Route exact path='/upload' component={Upload} />
             <Route exact path='/home' component={Main} />
             <Route exact path='/items' component={Items} />
-            <Route exact path='/items/:id' component={Detail} />
+            <Route path='/items/:id' component={Detail} />
             {/* <Route component={NoMatch} /> */}
           </Wrapper>
           <Footer />

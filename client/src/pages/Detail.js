@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom';
 /* eslint max-len: 0, react/prefer-stateless-function: 0 */
 import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import Button from 'mdbreact';
@@ -17,9 +17,9 @@ class Detail extends Component {
       user_id: null,
       redirect: false,
     };
-    
-    componentDidMount(){
-        this.getUserData();
+
+    componentDidMount() {
+      this.getUserData();
     }
 
     getUserData() {
@@ -64,15 +64,16 @@ class Detail extends Component {
         id: this.props.match.params.id,
         user_id: this.state.user_id,
       })
-        .then(result => {
-        if (result.status === 200){
-            this.setState({redirect: true})
-            }
+        .then((result) => {
+          if (result.status === 200) {
+            this.setState({ redirect: true });
+          }
         })
         .catch(err => console.log(err));
     }
 
     fileUpload = (file) => {
+      /* eslint no-undef: 0 */
       const formData = new FormData();
       formData.append('file', file);
       formData.append('id', this.props.match.params.id);
@@ -86,17 +87,17 @@ class Detail extends Component {
     }
 
     render() {
-        if (this.state.redirect) {
-            return <Redirect to='/items' /> 
-        }
+      if (this.state.redirect) {
+        return <Redirect to='/items' />;
+      }
       return (
         <div>
           <Container main>
             <Row params='pt-5 pb-3'>
               <h1 className='text-center'>Update Item</h1>
             </Row>
-            <Row params="pt-3 pb-3">
-                <a href="/"><h6 className="pl-3">&laquo; Back to My Pantry</h6></a>
+            <Row params='pt-3 pb-3'>
+              <a href='/'><h6 className='pl-3'>&laquo; Back to My Pantry</h6></a>
             </Row>
             <PantryList title={this.state.item.product_name}>
               <Form>
@@ -106,21 +107,21 @@ class Detail extends Component {
                   <Input type='file' name='file' onChange={this.handleFileChange} id='exampleFile' />
                   <FormText color='muted'>
                         Upload an image from your camera or photo library.
-                        </FormText>
-                            </FormGroup>
-                            <h3 className="black-text pt-3">Manually enter in a UPC</h3>
-                            <FormGroup>
-                                <Label for="exampleText" className="black-text">Enter a UPC Here</Label>
-                                <Input value={this.state.UPCText} onChange={this.handleInputChange} type="textarea" name="UPCText" id="exampleText" />
-                            </FormGroup>
-                            <FormGroup>
-                                <button type="button" onClick={this.handleSubmit} className="btn btn-primary ml-0">Submit</button>
-                            </FormGroup>
-                        </Form>
-                    </PantryList>
-                </Container>
-            </div>
-        )
+                  </FormText>
+                </FormGroup>
+                <h3 className='black-text pt-3'>Manually enter in a UPC</h3>
+                <FormGroup>
+                  <Label for='exampleText' className='black-text'>Enter a UPC Here</Label>
+                  <Input value={this.state.UPCText} onChange={this.handleInputChange} type='textarea' name='UPCText' id='exampleText' />
+                </FormGroup>
+                <FormGroup>
+                  <button type='button' onClick={this.handleSubmit} className='btn btn-primary ml-0'>Submit</button>
+                </FormGroup>
+              </Form>
+            </PantryList>
+          </Container>
+        </div>
+      );
     }
 }
 

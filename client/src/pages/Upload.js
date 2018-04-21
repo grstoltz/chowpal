@@ -1,5 +1,5 @@
-/* eslint max-len: 0 */
 import React, { Component } from 'react';
+/* eslint max-len: 0, react/prefer-stateless-function: 0 */
 import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import Button from 'mdbreact';
 import { Col, Row, Container } from '../components/Grid';

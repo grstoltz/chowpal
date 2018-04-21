@@ -12,7 +12,7 @@ CREATE TABLE user (
 
 CREATE TABLE food (
   id int(11) AUTO_INCREMENT NOT NULL,
-  user_id bigint NOT NULL,
+  user_id string NOT NULL,
   name varchar(255) NOT NULL,
   UPC varchar(255),
   brand varchar(255),
@@ -22,7 +22,7 @@ CREATE TABLE food (
 
 CREATE TABLE item (
   id int(11) AUTO_INCREMENT NOT NULL,
-  user_id bigint NOT NULL,
+  user_id string NOT NULL,
   UPC varchar(255) NOT NULL,
   store varchar(255),
   product_name varchar(255),

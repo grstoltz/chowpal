@@ -9,8 +9,8 @@ module.exports = {
   },
   test: {
     username: 'root',
-    password: 'root',
-    port: 3308,
+    password: '',
+    port: 3306,
     database: 'chowpal_db_test',
     host: '127.0.0.1',
     dialect: 'mysql',

@@ -51,11 +51,11 @@ class Main extends Component {
         return (
           <div>
             <Container main>
-              <Row params='pt-3 pb-3'>
-                <h1 className='text-center'>My Pantry</h1>
+              <Row params='pt-5 pb-5'>
+              <h1 className='centered'>My Pantry</h1>
               </Row>
               <PantryList title='My Items'>
-                {this.renderItems()}
+                {this.state.user_id ? this.renderItems() : <h5 className="grey-text pt-3">Log in to add some items!</h5>}
               </PantryList>
             </Container>
           </div>

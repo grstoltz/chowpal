@@ -65,10 +65,14 @@ class Upload extends Component {
       return (
         <div>
           <Container main>
-            <Row params='pt-3 pb-3'>
-              <h1 className='text-center'>Add a Receipt</h1>
+            <Row params='pt-5 pb-3'>
+              <h1 className='centered'>Add a Receipt</h1>
+            </Row>
+            <Row params="pt-3 pb-3">
+                <a href="/"><h6 className="pl-3">&laquo; Back to My Pantry</h6></a>
             </Row>
             <PantryList title='Upload a Receipt'>
+            {this.state.user_id ? 
               <Form>
                 <FormGroup>
                   <Label for='exampleText' className='black-text'>What store is this receipt from?</Label>
@@ -84,7 +88,7 @@ class Upload extends Component {
                             <FormGroup>
                                     <button type="button" onClick={this.handleSubmit} className="btn btn-primary ml-0">Submit</button>
                             </FormGroup>
-                        </Form>
+                        </Form> : <h5 className="grey-text pt-3 pb-3">Log in to upload a receipt!</h5>}
                     </PantryList>
                 </Container>
             </div>

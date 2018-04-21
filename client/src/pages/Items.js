@@ -49,18 +49,17 @@ class Items extends Component {
         return (
     <div>
         <Container main={true}>
-            <Row params="pt-5 pb-2">
+            <Row params="pt-5 pb-3">
                 <h1 className="centered">My Items</h1>
             </Row>
             <Row params="pt-3 pb-3">
                 <a href="/"><h6 className="pl-3">&laquo; Back to My Pantry</h6></a>
             </Row>
             <PantryList title="My Items">
-               {this.renderItems()}
+           {this.state.user_id ? this.renderItems() : <h5 className="grey-text pt-3 pb-3">Log in to see your items!</h5>}
             </PantryList>
         </Container>
     </div>
-    
         )
     }
 }

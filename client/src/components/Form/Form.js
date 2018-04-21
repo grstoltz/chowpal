@@ -1,7 +1,7 @@
 import React from 'react';
 /* eslint max-len: 0, react/prefer-stateless-function: 0 */
 import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import MaterialButton from '../SelectButton/MaterialButton';
+import SelectButton from '../SelectButton';
 
 export default class FileInput extends React.Component {
   render() {
@@ -18,7 +18,7 @@ export default class FileInput extends React.Component {
         </FormGroup>
         <FormGroup check row>
           <Col sm={{ size: 10, offset: 2 }}>
-            <MaterialButton buttonColor='primary' buttonText='Submit!' />
+            <SelectButton buttonColor='primary' buttonText='Submit!' />
           </Col>
         </FormGroup>
       </Form>

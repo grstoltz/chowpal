@@ -83,10 +83,12 @@ class Detail extends Component {
       return (
         <div>
           <Container main>
-            <Row params='pt-3 pb-3'>
+            <Row params='pt-5 pb-3'>
               <h1 className='text-center'>Update Item</h1>
             </Row>
-
+            <Row params="pt-3 pb-3">
+                <a href="/"><h6 className="pl-3">&laquo; Back to My Pantry</h6></a>
+            </Row>
             <PantryList title={this.state.item.product_name}>
               <Form>
                 <h3 className='black-text'>Upload an image of the UPC</h3>
@@ -94,7 +96,7 @@ class Detail extends Component {
                   <Label for='exampleFile' className='black-text'>File:</Label>
                   <Input type='file' name='file' onChange={this.handleFileChange} id='exampleFile' />
                   <FormText color='muted'>
-                                    Upload an image from your camera or photo library.
+                        Upload an image from your camera or photo library.
                         </FormText>
                             </FormGroup>
                             <h3 className="black-text pt-3">Manually enter in a UPC</h3>
@@ -102,10 +104,8 @@ class Detail extends Component {
                                 <Label for="exampleText" className="black-text">Enter a UPC Here</Label>
                                 <Input value={this.state.UPCText} onChange={this.handleInputChange} type="textarea" name="UPCText" id="exampleText" />
                             </FormGroup>
-                            <FormGroup check row>
-                                <Col size="10">
-                                    <button type="button" onClick={this.handleSubmit} className="btn btn-primary pl-0">Submit</button>
-                                </Col>
+                            <FormGroup>
+                                <button type="button" onClick={this.handleSubmit} className="btn btn-primary ml-0">Submit</button>
                             </FormGroup>
                         </Form>
                     </PantryList>

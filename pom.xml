@@ -1,19 +1,30 @@
-<project>
+<build>
+  <plugins>
+    <plugin>
+      <groupId>com.heroku.sdk</groupId>
+      <artifactId>heroku-maven-plugin</artifactId>
+      <configuration>
+        <processTypes>
+          <web>java $JAVA_OPTS -cp target/classes:target/dependency/* Main</web>
+        </processTypes>
+      </configuration>
+    </plugin>
+  </plugins>
+</build>
+<profiles>
+<profile>
+  <id>heroku</id>
   <build>
     <plugins>
-        <plugin>
-          <groupId>com.heroku.sdk</groupId>
-          <artifactId>heroku-maven-plugin</artifactId>
-          <version>2.0.3</version>
-        </plugin>
-      </plugins>
+      <plugin>
+      <artifactId>maven-clean-plugin</artifactId>
+      <version>2.5</version>
       <executions>
         <execution>
           <id>clean-build-artifacts</id>
           <phase>install</phase>
           <goals><goal>clean</goal></goals>
           <configuration>
-            <appName>chowpal</appName>
             <excludeDefaultDirectories>true</excludeDefaultDirectories>
             <filesets>
               <fileset>
@@ -29,13 +40,11 @@
                 </excludes>
               </fileset>
             </filesets>
-            <processTypes>
-              <web>java $JAVA_OPTS -cp target/classes:target/dependency/* Main</web>
-            </processTypes>
           </configuration>
         </execution>
       </executions>
       </plugin>
     </plugins>
   </build>
-</project>
+</profile>
+</profiles>

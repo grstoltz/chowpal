@@ -1,4 +1,5 @@
 const ZebraCrossing = require('zebra-crossing');
+const jre = require('node-jre');
 const fs = require('fs');
 const path = require('path');
 const request = require('request');
@@ -10,6 +11,10 @@ const api_key = process.env.SEM3KEY;
 const api_secret = process.env.SEM3SECRET;
 
 const sem3 = require('semantics3-node')(api_key, api_secret);
+
+jre.install(function(){
+  console.log("JRE INITIATED")
+};
 
 // Gets UPC from an image of a barcode
 exports.getUPC = function (req, res) {

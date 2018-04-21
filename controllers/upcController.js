@@ -55,8 +55,8 @@ exports.getUPCData = function (req, res) {
       console.log("Couldn't execute request: get_products");
       res.send(err);
     }
-    console.log(`Results of request: ${JSON.stringify(products)}`);
-    res.json(products);
+    console.log(`Results of request (json hopefully): ${JSON.stringify(products)}`);
+    res.send(products);
   });
 };
 

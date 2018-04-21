@@ -15,9 +15,9 @@ class Detail extends Component {
       UPCText: null,
       user_id: null,
     };
-    
-    componentDidMount(){
-        this.getUserData();
+
+    componentDidMount() {
+      this.getUserData();
     }
 
     getUserData() {
@@ -86,8 +86,8 @@ class Detail extends Component {
             <Row params='pt-5 pb-3'>
               <h1 className='text-center'>Update Item</h1>
             </Row>
-            <Row params="pt-3 pb-3">
-                <a href="/"><h6 className="pl-3">&laquo; Back to My Pantry</h6></a>
+            <Row params='pt-3 pb-3'>
+              <a href='/'><h6 className='pl-3'>&laquo; Back to My Pantry</h6></a>
             </Row>
             <PantryList title={this.state.item.product_name}>
               <Form>
@@ -97,21 +97,21 @@ class Detail extends Component {
                   <Input type='file' name='file' onChange={this.handleFileChange} id='exampleFile' />
                   <FormText color='muted'>
                         Upload an image from your camera or photo library.
-                        </FormText>
-                            </FormGroup>
-                            <h3 className="black-text pt-3">Manually enter in a UPC</h3>
-                            <FormGroup>
-                                <Label for="exampleText" className="black-text">Enter a UPC Here</Label>
-                                <Input value={this.state.UPCText} onChange={this.handleInputChange} type="textarea" name="UPCText" id="exampleText" />
-                            </FormGroup>
-                            <FormGroup>
-                                <button type="button" onClick={this.handleSubmit} className="btn btn-primary ml-0">Submit</button>
-                            </FormGroup>
-                        </Form>
-                    </PantryList>
-                </Container>
-            </div>
-        )
+                  </FormText>
+                </FormGroup>
+                <h3 className='black-text pt-3'>Manually enter in a UPC</h3>
+                <FormGroup>
+                  <Label for='exampleText' className='black-text'>Enter a UPC Here</Label>
+                  <Input value={this.state.UPCText} onChange={this.handleInputChange} type='textarea' name='UPCText' id='exampleText' />
+                </FormGroup>
+                <FormGroup>
+                  <button type='button' onClick={this.handleSubmit} className='btn btn-primary ml-0'>Submit</button>
+                </FormGroup>
+              </Form>
+            </PantryList>
+          </Container>
+        </div>
+      );
     }
 }
 

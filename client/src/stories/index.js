@@ -1,3 +1,4 @@
+/* eslint-disable */
 /* eslint max-len: 0, react/prefer-stateless-function: 0 */
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
@@ -9,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Modal from '../components/Modal/Modal';
 import Form from '../components/Form/Form';
 import Footer from '../components/Footer/Footer';
-import MaterialButton from '../components/SelectButton/MaterialButton';
+import SelectButton from '../components/SelectButton/SelectButton';
 import CardModal from '../components/Modal/CardModal';
 import MaterialNav from '../components/MaterialNav/MaterialNav';
 

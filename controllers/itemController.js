@@ -91,7 +91,7 @@ exports.findOneAndUpdate = function (req, res) {
   }).then((result) => {
     getUPCData(req.body)
       .then(data => createFood(req.body.user_id, data.results[0]))
-      .then(result => res.send(result));
+      .then(result => res.send({ success: 'Updated Successfully', status: 200 }));
   });
 };
 

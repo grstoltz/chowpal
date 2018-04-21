@@ -47,6 +47,7 @@ class Upload extends Component {
 
 
     fileUpload = (file) => {
+      /* eslint no-undef: 0 */
       const formData = new FormData();
       formData.append('file', file);
       formData.append('store', this.state.store);

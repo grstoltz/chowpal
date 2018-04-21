@@ -10,7 +10,7 @@ exports.findAll = function (req, res) {
   db.Item.findAll({
     where: {
       user_id: req.query.id,
-      // UPC: '',
+      UPC: '',
     },
   }).then(results => res.send(results));
 };

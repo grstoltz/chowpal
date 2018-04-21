@@ -76,3 +76,4 @@ In the terminal type:
 > npm test
 
 The test file test.food.js will drop and recreate the tables in the database_test database. It will insert data into the user, food, and items tables and query the inserted data from the tables. The test.server.js will make sure all the controller files exist.
+

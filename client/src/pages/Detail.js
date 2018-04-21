@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom'
 /* eslint max-len: 0, react/prefer-stateless-function: 0 */
 import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import Button from 'mdbreact';
@@ -14,6 +15,7 @@ class Detail extends Component {
       fileData: null,
       UPCText: null,
       user_id: null,
+      redirect: false,
     };
     
     componentDidMount(){
@@ -62,7 +64,11 @@ class Detail extends Component {
         id: this.props.match.params.id,
         user_id: this.state.user_id,
       })
-        .then(result => console.log(result))
+        .then(result => {
+        if (result.status === 200){
+            this.setState({redirect: true})
+            }
+        })
         .catch(err => console.log(err));
     }
 
@@ -80,6 +86,9 @@ class Detail extends Component {
     }
 
     render() {
+        if (this.state.redirect) {
+            return <Redirect to='/items' /> 
+        }
       return (
         <div>
           <Container main>

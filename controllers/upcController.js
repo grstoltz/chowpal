@@ -44,7 +44,6 @@ exports.getUPC = function (req, res) {
         return res.json(httpResponse);
       });
     });
-  res.end();
 };
 
 // Takes a UPC code and returns data from the digit-eyes API

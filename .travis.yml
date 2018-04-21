@@ -8,3 +8,7 @@ cache:
 branches:
   only:
     - master
+services:
+  - mysql
+before_install:
+  - mysql -e 'CREATE DATABASE chowpal_db_test;'

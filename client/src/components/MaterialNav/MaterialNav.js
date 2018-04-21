@@ -5,7 +5,7 @@ import { Navbar, NavbarBrand, NavbarNav, NavItem, NavLink } from 'mdbreact';
 import { Link } from 'react-router-dom';
 import Modal from '../Modal/Modal';
 import Form from '../Form/Form';
-import MaterialButton from '../SelectButton/MaterialButton';
+import SelectButton from '../SelectButton';
 import './MaterialNav.css';
 import API from '../../utils/API';
 
@@ -40,7 +40,7 @@ export default class MaterialNav extends React.Component {
               </NavItem>
               <NavItem>
                 <NavLink to='/upload'>Upload an Item</NavLink>
-                {/* <MaterialButton href="/auth/login" buttonColor='white' iconClass='fa fa-cutlery ml-2' buttonText='Login'></MaterialButton> */}
+                {/* <SelectButton href="/auth/login" buttonColor='white' iconClass='fa fa-cutlery ml-2' buttonText='Login'></SelectButton> */}
               </NavItem>
               <NavItem>
                 {(this.state.user_id ? <a className='nav-link' href='/auth/logout'>Logout</a> : <a className='nav-link' href='/auth/login'>Login</a>)}

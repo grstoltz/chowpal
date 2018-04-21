@@ -1,8 +1,7 @@
 import React from 'react';
 import { Button } from 'mdbreact';
 
-export default class MaterialButton extends React.Component {
-  render() {
+export const SelectButton = (props) => {
     return (
       <div>
         <Button outline color={this.props.buttonColor} onClick={this.props.onClick}>
@@ -10,5 +9,4 @@ export default class MaterialButton extends React.Component {
         </Button>
       </div>
     );
-  }
 }

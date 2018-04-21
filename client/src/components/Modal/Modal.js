@@ -2,7 +2,7 @@
 import React from 'react';
 /* eslint max-len: 0, react/prefer-stateless-function: 0 */
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import MaterialButton from '../SelectButton/MaterialButton';
+import SelectButton from '../SelectButton';
 import Form from '../Form/Form';
 import './Modal.css';
 
@@ -25,7 +25,7 @@ class NavModal extends React.Component {
   render() {
     return (
       <div>
-        <MaterialButton buttonColor='white' buttonText='Upload Receipt' iconClass='fa fa-barcode ml-2' onClick={this.toggle} />
+        <SelectButton buttonColor='white' buttonText='Upload Receipt' iconClass='fa fa-barcode ml-2' onClick={this.toggle} />
         {/* <Button color="primary" onClick={this.toggle}>{this.props.buttonLabel}</Button> */}
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>{this.props.modalHead}</ModalHeader>

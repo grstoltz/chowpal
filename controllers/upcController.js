@@ -5,6 +5,7 @@ const request = require('request');
 const crypto = require('crypto');
 const axios = require('axios');
 
+const PORT = process.env.PORT || 3001;
 const api_key = process.env.SEM3KEY;
 const api_secret = process.env.SEM3SECRET;
 
@@ -32,7 +33,7 @@ exports.getUPC = function (req, res) {
         method: 'put',
         body: params,
         json: true,
-        url: '/api/item',
+        url: `http://localhost:${PORT}/api/item`,
       };
 
       // Sends a quests to update the item with the UPC that was parsed

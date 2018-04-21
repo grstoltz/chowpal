@@ -3,6 +3,8 @@ const request = require('request');
 const data = require('./awsRes.json');
 const _ = require('lodash');
 
+const PORT = process.env.PORT || 3001;
+
 // Set your AWS credentials
 AWS.config.update({
   accessKeyId: process.env.AWS_ACCESS_KEY_ID,
@@ -50,7 +52,7 @@ exports.processItem = function (req, res) {
         method: 'post',
         body: params,
         json: true,
-        url: '/api/item/',
+        url: `http://localhost:${PORT}/api/item/`,
       };
 
       request(options, (err, httpResponse, body) => {

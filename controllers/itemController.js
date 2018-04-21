@@ -1,6 +1,7 @@
 const models = require('../models');
 const request = require('request');
 
+const PORT = process.env.PORT || 3001;
 const db = models.db;
 const Op = models.Op;
 
@@ -103,7 +104,7 @@ const getUPCData = function (requestBody) {
     method: 'post',
     body: params,
     json: true,
-    url: '/api/upc/data',
+    url: `http://localhost:${PORT}/api/upc/data`,
   };
 
   // Sends a quests to update the item with the UPC that was parsed
@@ -129,7 +130,7 @@ const createFood = function (user_id, data) {
     method: 'post',
     body: params,
     json: true,
-    url: 'http://localhost:3000/api/food/',
+    url: `http://localhost:${PORT}/api/food/`,
   };
 
   // Sends a quests to update the item with the UPC that was parsed

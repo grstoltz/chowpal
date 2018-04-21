@@ -15,8 +15,6 @@ class Detail extends Component {
         UPCText: null,
         user_id: null,
     };
-    // When this component mounts, grab the book with the _id of this.props.match.params.id
-    // e.g. localhost:3000/books/599dcb67f0f16317844583fc
     
     componentDidMount(){
         this.getUserData();
@@ -107,7 +105,7 @@ class Detail extends Component {
                             </FormGroup>
                             <FormGroup check row>
                                 <Col size="10">
-                                    <button type="button" onClick={this.handleSubmit} class="btn btn-primary">Submit</button>
+                                    <button type="button" onClick={this.handleSubmit} className="btn btn-primary pl-0">Submit</button>
                                 </Col>
                             </FormGroup>
                         </Form>

@@ -28,24 +28,25 @@ exports.processItem = function (req, res) {
     rekognition.detectText(params, (err, data) => {
       if (err) console.log(err, err.stack); // an error occurred
       else console.log(data); // successful response
-      parseData(data);
+      parseReceipt(data);
     });
   };
 
-  // sendRekcognition()
+  sendRekcognition();
 
   const parseReceipt = function (data) {
+    const conditions = [ 'SPECIAL', 'LOYALTY', 'NET', 'TOTAL', 'CASH', 'CHANGE', 'SUBTOTAL', 'DATE', 'KG' ];
     const itemArr = data.TextDetections.map(element => element.DetectedText.toUpperCase());
-    const regex = new RegExp('^[a-zA-Z][a-zA-Z0-9.,$;]+$');
-    const filteredArr = itemArr.filter(element => regex.test(element));
-    _.pullAll(filteredArr, [ 'SPECIAL', 'LOYALTY', 'NET', 'TOTAL', 'CASH', 'CHANGE', 'SUBTOTAL', 'DATE' ]);
-    
-    res.send(filteredArr);
+    _.remove(itemArr, item => conditions.some(el => item.includes(el)));
+    const filteredItemArr = itemArr.map(el => el.replace(/[^A-Za-z\t ]+\s*/g, '').trim()).filter(el => el.length);
+    _.pullAll(filteredItemArr, conditions);
 
-    filteredArr.forEach((product) => {
+    //res.send(filteredItemArr);
+
+    filteredItemArr.forEach((product) => {
       const params = {
         store: req.body.store,
-        product_name: itemArr[2],
+        product_name: product,
         user_id: req.body.user_id,
       };
 
@@ -56,18 +57,15 @@ exports.processItem = function (req, res) {
         url: 'http://localhost:3000/api/item/',
       };
 
-      // request(options, (err, httpResponse, body) => {
-      //   if (err) {
-      //     console.log(err);
-      //     return res.json({ success: false, msg: 'cannot post to item route' });
-      //   }
-      //   console.log(body);
-      //   res.json(body);
-      // });
+      request(options, (err, httpResponse, body) => {
+        if (err) {
+          console.log(err);
+          return res.json({ success: false, msg: 'cannot post to item route' });
+        }
+        console.log(body);
+      });
     });
   };
-
-  parseReceipt(data);
 };
 
 exports.processUPC = function (req, res) {
@@ -94,8 +92,6 @@ exports.processUPC = function (req, res) {
   const parseData = function (data) {
     const itemArr = data.TextDetections.map(element => element.DetectedText);
     console.log(itemArr[2]);
-    
-
     // item is currently hardcoded for testing purposes
     const params = {
       product_name: 'New Item',

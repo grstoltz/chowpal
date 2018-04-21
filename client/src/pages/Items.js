@@ -12,26 +12,27 @@ class Items extends Component {
         user_id: null
     }
 
-    getUserData(){
+    getUserData = () => {
         API.getUserData().then(result => {
+            console.log(result);
             this.setState({user_id: result.data.id})
-            this.getPendingItems()
+            this.getPendingItems(this.state.user_id)
         });
     }
 
-    componentDidMount(){
+    componentDidMount = () => {
         this.getUserData();
        }
     
-    getPendingItems(){
-        API.getPendingItems({id: this.state.user_id})
+    getPendingItems = (id) => {
+        API.getPendingItems({id: id})
           .then(result => this.setState({pendingItems: result.data}))
       }
 
 
     handleDeleteButton = event => {
         console.log(event.target.id)
-        API.deleteItem({id: event.target.id}).then(this.getPendingItems())
+        API.deleteItem({id: event.target.id}).then(this.getPendingItems(this.state.user_id))
     }
 
       renderItems = () => {
@@ -51,8 +52,11 @@ class Items extends Component {
         return (
     <div>
         <Container main={true}>
+            <Row params="pt-5 pb-2">
+                <h1 className="centered">My Items</h1>
+            </Row>
             <Row params="pt-3 pb-3">
-                <h1 className="text-center">My Items</h1>
+                <a href="/"><h6 className="pl-3">&laquo; Back to My Pantry</h6></a>
             </Row>
             <PantryList title="My Items">
                {this.renderItems()}

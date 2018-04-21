@@ -7,6 +7,7 @@ export default {
     },
     // Gets all items
     getPendingItems: function (params) {
+        console.log(params)
         return axios.get(`/api/item?id=${params.id}`);
     },
     getItem: function (id){

@@ -31,6 +31,6 @@ const upload = multer({
 });
 
 router.route('/')
-  .post(awsController.processItem);
+  .post(upload.any(), awsController.processItem);
 
 module.exports = router;

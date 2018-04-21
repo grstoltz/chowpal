@@ -82,10 +82,8 @@ class Upload extends Component {
                                 Upload an image from your camera or photo library.
                         </FormText>
                             </FormGroup>
-                            <FormGroup check row>
-                                <Col size="10">
-                                    <button type="button" onClick={this.handleSubmit} class="btn btn-primary">Submit</button>
-                                </Col>
+                            <FormGroup>
+                                    <button type="button" onClick={this.handleSubmit} className="btn btn-primary ml-0">Submit</button>
                             </FormGroup>
                         </Form>
                     </PantryList>

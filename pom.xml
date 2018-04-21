@@ -1,5 +1,4 @@
 <project>
-  <id>heroku</id>
   <build>
     <plugins>
         <plugin>
@@ -14,6 +13,7 @@
           <phase>install</phase>
           <goals><goal>clean</goal></goals>
           <configuration>
+            <appName>chowpal</appName>
             <excludeDefaultDirectories>true</excludeDefaultDirectories>
             <filesets>
               <fileset>
@@ -29,6 +29,9 @@
                 </excludes>
               </fileset>
             </filesets>
+            <processTypes>
+              <web>java $JAVA_OPTS -cp target/classes:target/dependency/* Main</web>
+            </processTypes>
           </configuration>
         </execution>
       </executions>

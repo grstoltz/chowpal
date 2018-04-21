@@ -1,6 +1,5 @@
-.footer {
-    position: bottom;
-    text-align: center;
+.myfooter {
+    margin-top: 0px !important; 
 }
 
 .badge-pill {

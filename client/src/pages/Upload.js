@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 /* eslint max-len: 0, react/prefer-stateless-function: 0 */
+import { Redirect } from 'react-router-dom'
 import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import Button from 'mdbreact';
 import { Col, Row, Container } from '../components/Grid';
@@ -14,6 +15,7 @@ class Upload extends Component {
       fileData: null,
       store: null,
       user_id: null,
+      redirect: false,
     };
 
     componentDidMount() {
@@ -30,9 +32,7 @@ class Upload extends Component {
       event.preventDefault();
 
       if (this.state.fileData && this.state.store) {
-        this.fileUpload(this.state.fileData).then((response) => {
-          console.log(response);
-        });
+        this.fileUpload(this.state.fileData)
       }
     }
 
@@ -59,10 +59,18 @@ class Upload extends Component {
           'content-type': 'multipart/form-data',
         },
       };
-      return API.postReceiptImage(formData, config).then(result => console.log(result));
-    }
+      API.postReceiptImage(formData, config).then(result => {
+          console.log(result.status)
+        if (result.status === 200) {
+            this.setState({ redirect: true })
+        }
+    });
+}
 
     render() {
+    if (this.state.redirect) {
+        return <Redirect to='/' /> 
+    }
       return (
         <div>
           <Container main>

@@ -33,7 +33,7 @@ class Main extends Component {
     }
 
       handleDeleteButton = (event) => {
-        API.deleteFood({ id: event.target.id }).then(this.getPantryItems());
+        API.deleteFood({ id: event.target.id }).then(this.getPantryItems(this.state.user_id));
       }
 
       renderItems = () => (this.state.pantryItems.length > 0 && this.state.user_id ?

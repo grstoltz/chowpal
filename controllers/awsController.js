@@ -58,11 +58,12 @@ exports.processItem = function (req, res) {
       request(options, (err, httpResponse, body) => {
         if (err) {
           console.log(err);
-          //  return res.json({ success: false, msg: 'cannot post to item route' });
+          return res.json({ success: false, msg: 'cannot post to item route' });
         }
         console.log(body);
       });
     });
   };
   sendRekcognition();
+  res.send({ success: 'Uploaded Successfully', status: 200 });
 };

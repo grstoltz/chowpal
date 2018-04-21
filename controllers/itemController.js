@@ -37,7 +37,7 @@ exports.createOne = function (req, res) {
     (result !== null && result.UPC ?
       getUPCData({ UPC: result.UPC })
         .then(data => createFood(req.body.user_id, data.results[0]))
-        .then(result => console.log(result)) :
+        .then(result => res.send(result)) :
       createItem(req.body).then(result => res.json(result))
     );
   });

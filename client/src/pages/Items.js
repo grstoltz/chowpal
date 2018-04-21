@@ -1,15 +1,14 @@
-import React, { Component } from "react";
-import { Col, Row, Container } from "../components/Grid";
-import { PantryList } from "../components/PantryList";
-import PantryCard from "../components/PantryCard";
+import React, { Component } from 'react';
+import { Col, Row, Container } from '../components/Grid';
+import { PantryList } from '../components/PantryList';
+import PantryCard from '../components/PantryCard';
 import './Main.css';
-import API from "../utils/API";
+import API from '../utils/API';
 
 class Items extends Component {
-
     state = {
-        pendingItems: [],
-        user_id: null
+      pendingItems: [],
+      user_id: null,
     }
 
     getUserData = () => {
@@ -35,20 +34,18 @@ class Items extends Component {
         API.deleteItem({id: event.target.id}).then(this.getPendingItems(this.state.user_id))
     }
 
-      renderItems = () => {
-        return (this.state.pendingItems.length > 0 ?
-          this.state.pendingItems.map(item => (
+      renderItems = () => (this.state.pendingItems.length > 0 ?
+        this.state.pendingItems.map(item => (
           <PantryCard
             id={item.id}
             name={item.product_name}
             // date={item.purchase_date}
             handleDeleteButton={this.handleDeleteButton}
           />
-        )) : <h5>"No Pending Items!"</h5>
-      );
-      }
+        )) : <h5>No Pending Items!</h5>
+      )
 
-    render() {
+      render() {
         return (
     <div>
         <Container main={true}>

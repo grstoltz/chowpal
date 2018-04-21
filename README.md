@@ -11,12 +11,20 @@ ChowPal is a web application for grocery shoppers who are unsatisfied with the c
 Check out the app running on heroku here: 
 
 ---
-# Screenshot
-![Screenshot](https://github.com/grstoltz/chowpal/blob/master/client/public/screen-shot.jpg)
+# Screenshot - My Pantry
+![Screenshot](https://github.com/grstoltz/chowpal/blob/master/client/public/mypantry.jpg)
 
 ---
-# File upload
-![GIF]()
+# Log-on Modal 
+![Screenshot](https://github.com/grstoltz/chowpal/blob/master/client/public/modal-login.jpg)
+
+---
+# Receipt Upload
+![Screenshot](https://github.com/grstoltz/chowpal/blob/master/client/public/load-receipt.jpg)
+
+---
+# Mobile Version
+![Screenshot](https://github.com/grstoltz/chowpal/blob/master/client/public/mobile.jpg)
 
 ---
 # Design Team

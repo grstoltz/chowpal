@@ -1,5 +1,5 @@
 const ZebraCrossing = require('zebra-crossing');
-const jre = require('node-jre');
+const spawn = require('child_process').spawn;
 const fs = require('fs');
 const path = require('path');
 const request = require('request');
@@ -12,11 +12,7 @@ const api_secret = process.env.SEM3SECRET;
 
 const sem3 = require('semantics3-node')(api_key, api_secret);
 
-jre.install(function(){
-  console.log("JRE INITIATED")
-});
-
-// Gets UPC from an image of a barcode
+const java = spawn('java', [ '-version' ]);
 exports.getUPC = function (req, res) {
   console.log(req.files);
   // Uses ZebraCrossing to parse an image file **Using a static image

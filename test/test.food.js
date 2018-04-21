@@ -40,6 +40,8 @@ describe('ChowPal Database Testing', () => {
       })
       .then((foundUser) => {
         expect(foundUser).to.not.be.null;
+        expect(userObj.google_id).to.equal(foundUser.google_id);
+        expect(userObj.user_name).to.equal(foundUser.user_name);
         console.log('Query New User: ', foundUser.google_id);
         console.log('Query New Name - ', foundUser.user_name);
         done();
@@ -79,6 +81,9 @@ describe('ChowPal Database Testing', () => {
       })
       .then((foundFood) => {
         expect(foundFood).to.not.be.null;
+        expect(userFood.name).to.equal(foundFood.name);
+        expect(userFood.UPC).to.equal(foundFood.UPC);
+        expect(userFood.brand).to.equal(foundFood.brand);
         console.log('Query New Food name: ', foundFood.name);
         console.log('Query New Food UPC: ', foundFood.UPC);
         console.log('Query New Food brand: ', foundFood.brand);
@@ -103,6 +108,10 @@ describe('ChowPal Database Testing', () => {
           .findOne({ where: { id: item.id } });
       })
       .then((foundItem) => {
+        expect(userItem.UPC).to.equal(foundItem.UPC);
+        expect(userItem.store).to.equal(foundItem.store);
+        expect(userItem.product_name).to.equal(foundItem.product_name);
+        expect(userItem.product_id).to.equal(foundItem.product_id);
         console.log('Query New Item UPC: ', foundItem.UPC);
         console.log('Query New Item store: ', foundItem.store);
         console.log('Query New Item product name: ', foundItem.product_name);

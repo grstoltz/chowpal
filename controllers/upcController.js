@@ -14,7 +14,7 @@ const sem3 = require('semantics3-node')(api_key, api_secret);
 
 jre.install(function(){
   console.log("JRE INITIATED")
-};
+});
 
 // Gets UPC from an image of a barcode
 exports.getUPC = function (req, res) {

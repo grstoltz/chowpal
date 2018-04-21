@@ -6,7 +6,8 @@
     "before": true, 
     "describe": true,
     "document": true,  
-    "window": true
+    "window": true,
+    "FormData": true
   },
   "rules": {
     "array-bracket-spacing": [2, "always"],

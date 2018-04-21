@@ -1,1 +1,1 @@
-export { default } from "./ModalCard";
+export { default } from './ModalCard';

@@ -7,6 +7,10 @@
   <version>1.0</version>
   <name>chowpal Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  
+  <configuration>
+    <failOnMissingWebXml>false</failOnMissingWebXml>
+  </configuration>
 
   <build>
     <finalName>chowpal</finalName>

@@ -7,7 +7,7 @@
     "server": "node server.js",
     "install": "cd client; yarn install; yarn build;",
     "client": "cd client && npm run start",
-    "start": "concurrently \"./node_modules/.bin/nodemon\" \"npm run client\"",
+    "start": "concurrently --kill-others \"nodemon\" \"npm run client\"",
     "build": "cd client && npm run build",
     "deploy": "yarn build && git add . && git commit -m \"Building for production\" && git push heroku master",
     "test:server": "env NODE_ENV=test mocha --exit",

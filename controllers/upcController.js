@@ -56,7 +56,7 @@ exports.getUPCData = function (req, res) {
       res.send(err);
     }
     console.log(`Results of request: ${JSON.stringify(products)}`);
-    res.send(products);
+    res.json(products);
   });
 };
 

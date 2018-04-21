@@ -8,3 +8,6 @@ cache:
 branches:
   only:
     - master
+services:
+  - mysql
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS chowpal_db_test;'
